@@ -5,7 +5,110 @@
     --color-dark-bg: #0d1117;
     --color-text-light: #ffffff;
     --color-text-muted: #b8c1c8;
-    --green-1: rgba(15, 76, 76, 0.88);
+    --green-1: rgba(15, 76, 76, 0.88);/* =========================
+    VARIABLES & BASE
+========================= */
+:root {
+    --color-dark-bg: #0d1117;
+    --color-text-light: #ffffff;
+    --color-text-muted: #b8c1c8;
+    --green-sisr: #2ecc71;
+    --accent: #f39c12; /* Orange */
+    --border-radius: 22px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--color-text-light);
+    display: flex;
+    min-height: 100vh;
+    background: var(--color-dark-bg) url("images/background.png") no-repeat center right / cover fixed;
+}
+
+/* =========================
+    SIDEBAR & CONTACTS (FIX)
+========================= */
+.sidebar {
+    width: 180px;
+    min-width: 180px;
+    background: linear-gradient(180deg, #040810, #070e1a, #040810);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+}
+
+/* On neutralise les points orange pour la sidebar UNIQUEMENT */
+.sidebar ul, .sidebar li { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+.sidebar li::before { content: none !important; }
+
+/* Alignement LinkedIn / Mail */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+}
+.social-links a { color: var(--color-text-muted); font-size: 1.2em; text-decoration: none; transition: 0.3s; }
+.social-links a:hover { color: var(--accent); }
+
+/* =========================
+    GLASSMORPHISM (RESTAURATION ACCUEIL)
+========================= */
+.content { flex: 1; padding: 40px; max-width: 1100px; }
+
+/* Sélecteur large pour inclure TOUTES les bulles, même l'accueil */
+.content-header, .bubble-card, .stage-card, .article-card, .list-section, .section-apropos, .summary-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* =========================
+    GESTION DES POINTS (SISR vs SLAM)
+========================= */
+.content ul { list-style: none; }
+.content li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+}
+
+/* Règle par défaut : Points ORANGE (SLAM, Profil, Stages, Veille) */
+.content li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1.3em;
+}
+
+/* Règle spécifique : Points VERTS (Uniquement pour SISR) */
+.sisr-puces li::before {
+    color: var(--green-sisr) !important;
+}
+
+/* Liens en Jaune (Fix bleu) */
+.content a:not(.sidebar a) {
+    color: #f1c40f !important;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* =========================
+    STRUCTURE ACCUEIL
+========================= */
+.summary-cards { display: flex; gap: 20px; }
+.summary-card { flex: 1; margin-bottom: 0; }
     --green-2: rgba(18, 60, 60, 0.88);
     --green-sisr: #2ecc71;
     --accent: #f39c12;
@@ -130,3 +233,4 @@ body {
     width: 8px; height: 8px; background: #2ecc71;
     border-radius: 50%; display: inline-block; margin-right: 5px;
 }
+
