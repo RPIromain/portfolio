@@ -72,7 +72,7 @@ body {
 }
 
 /* =========================
-    GESTION DES POINTS (SISR vs SLAM)
+    SYSTÈME DE POINTS (AUTO)
 ========================= */
 .content ul { list-style: none; }
 .content li {
@@ -83,25 +83,32 @@ body {
     color: var(--color-text-muted);
 }
 
-/* Règle par défaut : Points ORANGE (SLAM, Profil, Stages, Veille) */
+/* On crée le point par défaut */
 .content li::before {
     content: "•";
     position: absolute;
     left: 0;
-    color: var(--accent);
     font-size: 1.3em;
 }
 
-/* Règle spécifique : Points VERTS (Uniquement pour SISR) */
-.sisr-puces li::before {
-    color: var(--green-sisr) !important;
+/* COULEUR AUTO : Si le titre au-dessus est vert (#2ecc71), le point devient vert */
+.list-section h3[style*="color: #2ecc71"] + .card-details li::before {
+    color: #2ecc71 !important;
 }
 
-/* Liens en Jaune (Fix bleu) */
-.content a:not(.sidebar a) {
-    color: #f1c40f !important;
-    font-weight: 600;
-    text-decoration: none;
+/* COULEUR AUTO : Si le titre au-dessus est orange (var(--accent)), le point devient orange */
+.list-section h3[style*="color: var(--accent)"] + .card-details li::before {
+    color: var(--accent) !important;
+}
+
+/* Fallback (sécurité) : si rien n'est détecté, on met orange */
+.content li::before { color: var(--accent); }
+
+/* =========================
+    FIX BOUTON & TEXTE BLANC
+========================= */
+.status-badge span, .card-duration, .download-btn {
+    color: #ffffff !important;
 }
 
 /* =========================
@@ -233,4 +240,5 @@ body {
     width: 8px; height: 8px; background: #2ecc71;
     border-radius: 50%; display: inline-block; margin-right: 5px;
 }
+
 
