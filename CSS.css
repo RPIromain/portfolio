@@ -15,11 +15,7 @@
 /* =========================
     RESET & BODY
 ========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -29,129 +25,108 @@ body {
     background-color: var(--color-dark-bg);
     background-image: url("images/background.png");
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center right;
     background-attachment: fixed;
 }
 
 /* =========================
-    SIDEBAR PC (RESTAURÉE)
+    SIDEBAR (FIX ICÔNES & POINTS)
 ========================= */
 .sidebar {
     width: 180px;
     min-width: 180px;
     background: linear-gradient(180deg, #040810, #070e1a, #040810);
-    padding: 30px 0;
     position: sticky;
     top: 0;
     height: 100vh;
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
     display: flex;
     flex-direction: column;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
 }
 
-.sidebar nav ul { list-style: none; }
+/* On enlève les points orange de TOUTE la sidebar */
+.sidebar li::before { content: none !important; }
+.sidebar ul { list-style: none !important; padding: 0 !important; }
+.sidebar li { padding: 0 !important; margin: 0 !important; }
+
 .sidebar nav ul li a {
     display: block;
     padding: 12px 22px;
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
-    font-weight: 500;
+    transition: 0.25s;
 }
-.sidebar nav ul li a:hover { color: var(--accent); text-decoration: underline; }
+.sidebar nav ul li a:hover { color: var(--accent); }
 
-.sidebar-footer { margin-top: auto; padding: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-.status-badge { background: rgba(46, 204, 113, 0.1); border: 1.5px solid #2ecc71; border-radius: 12px; padding: 10px; text-align: center; }
-.status-dot { width: 8px; height: 8px; background: #2ecc71; border-radius: 50%; display: inline-block; margin-right: 5px; }
+/* Fix des icônes Indeed / Mail en bas */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 10px;
+}
+.social-links a {
+    color: var(--color-text-muted);
+    font-size: 1.2em;
+    text-decoration: none;
+}
+.social-links a:hover { color: var(--accent); }
 
 /* =========================
-    EFFET BULLE "GOUTTE D'EAU" (MESURES RESTAURÉES)
+    BULLES "GOUTTE D'EAU"
 ========================= */
 .content { flex: 1; padding: 40px; max-width: 1100px; }
 
-/* On restaure le padding de 32px pour l'effet bulle spacieux */
-.content-header, .accueil-header, .bubble-card, .stage-card, .article-card, .list-section, .section-apropos, .summary-card {
+.content-header, .bubble-card, .stage-card, .article-card, .list-section {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
     border-radius: var(--border-radius);
     border: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    padding: 32px;
     margin-bottom: 24px;
-    padding: 32px; /* Taille goutte d'eau originale */
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.content-header, .accueil-header { 
-    background: linear-gradient(135deg, var(--green-1), var(--green-2)); 
 }
 
 /* =========================
-    ALIGNEMENT DES PUCES
+    CONDITION DES POINTS PAR BLOC
 ========================= */
-ul { list-style: none; }
-li {
+/* Style de base pour les listes dans le contenu */
+.content ul { list-style: none; }
+.content li {
     position: relative;
-    padding-left: 28px; /* Plus d'espace pour un look aéré */
-    margin-bottom: 12px;
+    padding-left: 25px;
+    margin-bottom: 10px;
     color: var(--color-text-muted);
     line-height: 1.6;
 }
-
-li::before {
+.content li::before {
     content: "•";
     position: absolute;
     left: 0;
-    top: 0;
-    color: var(--accent); /* Orange par défaut */
     font-size: 1.3em;
 }
 
-.sisr-puces li::before {
-    color: var(--green-sisr) !important; /* Vert pour SISR */
-}
+/* 1. Points ORANGE (Par défaut: Stages, Profil, Veille, SLAM) */
+.content li::before { color: var(--accent); }
+
+/* 2. Points VERTS (Uniquement pour le bloc SISR) */
+.sisr-puces li::before { color: var(--green-sisr) !important; }
+
+/* 3. Liens Jaunes */
+.web-link, .content a:not(.sidebar a) { color: #f1c40f; font-weight: 600; }
 
 /* =========================
-    FIX LIENS (FINI LE BLEU)
+    AUTRES FIX
 ========================= */
-a {
-    color: inherit;
-    text-decoration: none;
+.status-badge {
+    border: 1px solid #2ecc71;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: 12px;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+    font-size: 0.8em;
 }
-
-/* Liens spécifiques aux sites (Jaune/Orange) */
-.web-link, .article-content a, .card-details a {
-    color: #f1c40f !important;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
+.status-dot {
+    width: 8px; height: 8px; background: #2ecc71;
+    border-radius: 50%; display: inline-block; margin-right: 5px;
 }
-
-.web-link:hover, .article-content a:hover {
-    text-decoration: underline;
-    color: var(--accent) !important;
-}
-
-/* =========================
-    STRUCTURE ACCUEIL / STAGES
-========================= */
-.summary-cards { display: flex; gap: 20px; }
-.summary-card { flex: 1; margin-bottom: 0; }
-
-.stage-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.card-duration {
-    background-color: var(--accent);
-    color: white;
-    padding: 6px 16px;
-    border-radius: 999px;
-    font-weight: 600;
-    font-size: 0.85em;
-    white-space: nowrap;
-}
-
-.article-meta { color: var(--accent); font-weight: 500; margin-bottom: 12px; display: block; }
