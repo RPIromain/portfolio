@@ -190,20 +190,41 @@ body {
 }
 
 /* =========================
-    6. BOUTONS & LIENS (FIX BLANC)
+    6. BOUTONS & LIENS (FIX DÉFINITIF)
 ========================= */
-/* On force le blanc sur le texte des boutons/badges */
-.card-duration, 
-.download-btn, 
-.btn-cv, 
-.status-badge span,
-a.download-btn {
-    color: #ffffff !important;
+
+/* Le bouton spécifique avec son dégradé */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(to right, #ff4e50, #f9d423);
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    
+    /* ON FORCE LE BLANC ICI */
+    color: #ffffff !important; 
     text-decoration: none !important;
 }
 
-/* Liens des sites en jaune */
-.content a:not(.sidebar a):not(.status-badge):not(.download-btn):not(.btn-cv) {
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    filter: brightness(1.1);
+    color: #ffffff !important;
+}
+
+/* On s'assure que les autres éléments badges/durée restent blancs aussi */
+.card-duration, 
+.status-badge span {
+    color: #ffffff !important;
+}
+
+/* Les liens normaux dans le texte restent en jaune */
+.content a:not(.sidebar a):not(.download-btn) {
     color: #f1c40f !important;
     font-weight: 600;
 }
@@ -220,3 +241,4 @@ a.download-btn {
     flex: 1; 
     margin-bottom: 0; 
 }
+
