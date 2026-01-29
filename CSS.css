@@ -134,7 +134,7 @@ body {
     max-width: 1100px; 
 }
 
-/* Effet Goutte d'eau/Bulle sur TOUTES les cartes */
+/* Version de base des cartes */
 .content-header, .accueil-header, .bubble-card, .stage-card, 
 .article-card, .list-section, .section-apropos, .summary-card {
     background: rgba(255, 255, 255, 0.05);
@@ -145,12 +145,25 @@ body {
     padding: 32px;
     margin-bottom: 24px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    
+    /* ANIMATION : On prépare la transition fluide */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease, 
+                background 0.4s ease;
+    cursor: default;
 }
 
-.content-header {
-    background: linear-gradient(135deg, var(--green-1), var(--green-2));
+/* EFFET AU SURVOL (AGRANDISSEMENT) */
+.content-header:hover, .bubble-card:hover, .stage-card:hover, 
+.article-card:hover, .list-section:hover, .section-apropos:hover, .summary-card:hover {
+    /* Agrandissement de 2% (suffisant pour l'effet sans casser le layout) */
+    transform: scale(1.02); 
+    
+    /* On renforce l'ombre et la clarté pour l'effet de rapprochement */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
-
 /* =========================
     5. SYSTÈME DES POINTS (SISR/SLAM)
 ========================= */
@@ -205,3 +218,4 @@ body {
     flex: 1; 
     margin-bottom: 0; 
 }
+
