@@ -16,108 +16,96 @@
             <li><a href="Mon-Profil.html">Mon Profil</a></li>
             <li><a href="Mes-Stages.html">Mes Stages</a></li>
             <li><a href="Veille-Technologique.html">Veille Technologique</a></li>
+            <li><a href="tableau-synthese.html">Tableau de synthèse</a></li>
         </ul>
     </nav>
 
     <div class="sidebar-footer">
         <div class="status-badge">
             <div class="status-dot"></div>
-            <span style="font-size: 0.75em; color: #2ecc71; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Disponible</span>
-            <p style="font-size: 0.8em; margin-top: 5px; color: var(--color-text-muted);">Alternance 2026/2027</p>
+            <span>Disponible</span>
         </div>
-
-        <div class="social-links">
-            <a href="https://www.linkedin.com/" target="_blank">in</a>
-            <a href="mailto:romainpiccoli0@gmail.com">@</a>
-        </div>
-
-        <p style="font-size: 0.7em; color: rgba(255,255,255,0.3); text-align: center; margin-top: 20px;">
-            © 2026 Romain P.
-        </p>
     </div>
 </aside>
 
 <main class="content">
 
-    <header class="content-header">
-        <h1>Réalisations professionnelles – Hyléance</h1>
-        <p>Stage de 2ème année BTS SIO SISR – 7 semaines</p>
-    </header>
+<header class="content-header">
+    <h1>Réalisations professionnelles – Hyléance</h1>
+    <p>Administration d’une infrastructure hybride AD / Microsoft Entra ID sécurisée par EDR</p>
+</header>
 
-    <section class="article-card">
-        <h2>Contexte de l’entreprise</h2>
-        <p>
-            Hyléance dispose d’une infrastructure informatique basée sur un Active Directory permettant
-            la gestion centralisée des utilisateurs, des postes de travail et des droits d’accès aux ressources réseau.
-            L’environnement nécessite une administration rigoureuse afin de garantir la sécurité,
-            la cohérence de l’annuaire et la bonne gestion des comptes utilisateurs.
-        </p>
-    </section>
+<section class="article-card">
+    <h2>Contexte de l’infrastructure</h2>
+    <p>
+        Hyléance dispose d’une infrastructure hybride composée d’un Active Directory local
+        gérant les comptes ordinateurs et utilisateurs, ainsi qu’un environnement Microsoft Entra ID
+        pour les services Microsoft 365.
+        Les identités ne sont pas synchronisées, ce qui implique une gestion distincte
+        des comptes AD et des comptes Microsoft.
+    </p>
+</section>
 
-    <section class="article-card">
-        <h2>Objectifs de la mission</h2>
-        <ul class="sisr-puces">
-            <li>Maintenir une structure Active Directory propre et organisée</li>
-            <li>Gérer les comptes utilisateurs et leurs droits d’accès</li>
-            <li>Appliquer des stratégies de sécurité via les GPO</li>
-            <li>Mettre en place des procédures d’onboarding et d’offboarding</li>
-        </ul>
-    </section>
+<section class="article-card">
+    <h2>Sécurité de l’infrastructure</h2>
+    <ul class="sisr-puces">
+        <li>Protection des postes par WithSecure Elements EDR (détection comportementale par IA)</li>
+        <li>Surveillance des menaces en temps réel sur les endpoints</li>
+        <li>Gestion des postes intégrés au domaine AD</li>
+    </ul>
+</section>
 
-    <section class="article-card">
-        <h2>Actions réalisées</h2>
-        <ul class="sisr-puces">
-            <li>Création et organisation des Unités Organisationnelles (OU)</li>
-            <li>Création des comptes utilisateurs dans l’Active Directory</li>
-            <li>Création et gestion des groupes de sécurité</li>
-            <li>Attribution des droits d’accès aux partages réseau (serveurs de fichiers)</li>
-            <li>Mise en place et modification de GPO pour sécuriser les postes utilisateurs</li>
-            <li>Gestion des demandes via un outil de ticketing</li>
-            <li>Application des procédures d’arrivée (onboarding) et de départ (offboarding) des salariés</li>
-        </ul>
-    </section>
+<section class="article-card">
+    <h2>Actions réalisées</h2>
+    <ul class="sisr-puces">
+        <li>Création et organisation des OU dans l’Active Directory</li>
+        <li>Création des comptes utilisateurs et groupes de sécurité</li>
+        <li>Attribution des droits sur les partages réseau</li>
+        <li>Mise en place et modification de GPO de sécurité</li>
+        <li>Gestion des demandes via l’outil de ticketing</li>
+        <li>Procédures d’onboarding et d’offboarding utilisateurs</li>
+        <li>Vérification de la conformité des postes protégés par l’EDR</li>
+    </ul>
+</section>
 
-    <section class="article-card">
-        <h2>Outils et technologies utilisés</h2>
-        <ul class="sisr-puces">
-            <li>Windows Server</li>
-            <li>Active Directory Domain Services (ADDS)</li>
-            <li>GPO (Group Policy Objects)</li>
-            <li>Partages réseau SMB</li>
-            <li>Outil de ticketing interne</li>
-        </ul>
-    </section>
+<section class="article-card">
+    <h2>Gestion des identités</h2>
+    <p>
+        Les utilisateurs disposent de deux comptes distincts :
+    </p>
+    <ul class="sisr-puces">
+        <li>Un compte Active Directory pour l’ouverture de session sur les postes du domaine</li>
+        <li>Un compte Microsoft Entra ID pour l’accès aux services Microsoft 365</li>
+    </ul>
+    <p>
+        Cette organisation nécessite une gestion rigoureuse des mots de passe et des accès.
+    </p>
+</section>
 
-    <section class="article-card">
-        <h2>Difficultés rencontrées</h2>
-        <p>
-            La compréhension de l’architecture existante de l’Active Directory était essentielle afin
-            de modifier ou d’ajouter des droits sans perturber les accès des utilisateurs.
-            Il a également fallu adapter les GPO existantes sans créer de conflits de stratégies.
-        </p>
-    </section>
+<section class="article-card">
+    <h2>Stratégie de sauvegarde</h2>
+    <p>
+        L’entreprise applique la règle de sauvegarde professionnelle <strong>3-2-1-1-0</strong> :
+    </p>
+    <ul class="sisr-puces">
+        <li>3 copies des données</li>
+        <li>2 supports différents</li>
+        <li>1 copie externalisée hors site</li>
+        <li>1 copie immuable contre les ransomwares</li>
+        <li>0 erreur vérifiée lors des tests de restauration</li>
+    </ul>
+</section>
 
-    <section class="article-card">
-        <h2>Résultats obtenus</h2>
-        <p>
-            L’annuaire Active Directory est resté structuré et cohérent, les droits utilisateurs
-            ont été correctement attribués et les stratégies de sécurité renforcées.
-            Les procédures d’onboarding et d’offboarding ont permis une gestion plus fluide
-            du cycle de vie des comptes utilisateurs.
-        </p>
-    </section>
-
-    <section class="article-card">
-        <h2>Compétences SIO mobilisées</h2>
-        <ul class="sisr-puces">
-            <li>Gérer le patrimoine informatique</li>
-            <li>Répondre aux incidents et aux demandes d’assistance</li>
-            <li>Mettre à disposition des services informatiques</li>
-            <li>Organiser son développement professionnel</li>
-        </ul>
-    </section>
+<section class="article-card">
+    <h2>Compétences SIO mobilisées</h2>
+    <ul class="sisr-puces">
+        <li>Gérer le patrimoine informatique</li>
+        <li>Mettre à disposition des services informatiques</li>
+        <li>Répondre aux incidents et aux demandes d’assistance</li>
+        <li>Sécuriser une infrastructure</li>
+    </ul>
+</section>
 
 </main>
-
 </body>
 </html>
