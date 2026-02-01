@@ -2,8 +2,70 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Tableau de synthèse E5 - Romain Piccoli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de Synthèse E5 - Romain Piccoli</title>
     <link rel="stylesheet" href="CSS.css">
+    <style>
+        /* Styles spécifiques pour le tableau complexe du référentiel */
+        .table-container {
+            overflow-x: auto; /* Permet le défilement horizontal sur mobile */
+            margin-top: 20px;
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+            font-size: 0.85em;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .matrix-table th, .matrix-table td {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .matrix-table thead th {
+            background: rgba(241, 196, 15, 0.1); /* Teinte dorée pour l'entête */
+            color: var(--accent);
+            vertical-align: middle;
+        }
+
+        .rotate-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            white-space: nowrap;
+            padding: 15px 5px;
+            height: 150px;
+        }
+
+        .category-header {
+            background: rgba(255, 255, 255, 0.1);
+            font-weight: bold;
+            text-align: left !important;
+            color: #ffffff;
+        }
+
+        .check-cell {
+            color: #2ecc71;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .real-link {
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .real-link:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
@@ -22,60 +84,87 @@
         <div class="sidebar-footer">
             <div class="status-badge">
                 <div class="status-dot"></div>
-                <span>Disponible</span>
+                <span style="font-size: 0.75em; color: #2ecc71; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Disponible</span>
+                <p style="font-size: 0.8em; margin-top: 5px; color: var(--color-text-muted);">Alternance 2026/2027</p>
             </div>
             <div class="social-links">
                 <a href="https://www.linkedin.com/" target="_blank">in</a>
                 <a href="mailto:romainpiccoli0@gmail.com">@</a>
             </div>
+            <p style="font-size: 0.7em; color: rgba(255,255,255,0.3); text-align: center; margin-top: 20px;">
+                © 2026 Romain P.
+            </p>
         </div>
     </aside>
 
     <main class="content">
         <header class="content-header">
-            <h1>Tableau de synthèse – E5</h1>
-            <p>Correspondance entre réalisations professionnelles et compétences SISR</p>
+            <h1>Tableau de synthèse des réalisations</h1>
+            <p>Récapitulatif des compétences mobilisées durant la formation [cite: 8]</p>
         </header>
 
-        <section class="article-card">
-            <table class="custom-table">
+        <div class="table-container">
+            <table class="matrix-table">
                 <thead>
                     <tr>
-                        <th>Réalisation</th>
-                        <th>Entreprise</th>
-                        <th>Compétences mobilisées</th>
+                        <th rowspan="2">Réalisations professionnelles</th>
+                        <th rowspan="2">Période</th>
+                        <th colspan="6">Compétences du référentiel SISR </th>
+                    </tr>
+                    <tr>
+                        <th class="rotate-text">Gérer le patrimoine</th>
+                        <th class="rotate-text">Répondre aux incidents</th>
+                        <th class="rotate-text">Développer la présence en ligne</th>
+                        <th class="rotate-text">Travailler en mode projet</th>
+                        <th class="rotate-text">Mise à disposition de services</th>
+                        <th class="rotate-text">Développement professionnel</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr><td colspan="8" class="category-header">Réalisations en cours de formation</td></tr>
                     <tr>
-                        <td>Administration Active Directory, GPO, gestion des droits</td>
-                        <td><strong>Hyléance</strong></td>
-                        <td>Gérer le patrimoine informatique / Support utilisateurs</td>
+                        <td><a href="#" class="real-link">Atelier de professionnalisation : Virtualisation</a></td>
+                        <td>2024</td>
+                        <td class="check-cell">X</td>
+                        <td></td>
+                        <td></td>
+                        <td class="check-cell">X</td>
+                        <td class="check-cell">X</td>
+                        <td></td>
                     </tr>
+
+                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (1ère année)</td></tr>
                     <tr>
-                        <td>Déploiement de postes sans master</td>
-                        <td><strong>Tereva</strong></td>
-                        <td>Support et préparation d’environnement utilisateur</td>
+                        <td><a href="realisations-hyleance.html" class="real-link">Administration AD & GPO (Hyléance)</a></td>
+                        <td>Mai 2025</td>
+                        <td class="check-cell">X</td>
+                        <td class="check-cell">X</td>
+                        <td></td>
+                        <td></td>
+                        <td class="check-cell">X</td>
+                        <td></td>
                     </tr>
+
+                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (2ème année)</td></tr>
                     <tr>
-                        <td>Installation serveur ADDS et déploiement manuel</td>
-                        <td><strong>IPC</strong></td>
-                        <td>Mise en place d’un service réseau / Gestion d’infrastructure</td>
-                    </tr>
-                    <tr>
-                        <td>Gestion des droits AD & téléphonie IP</td>
-                        <td><strong>Gergonne</strong></td>
-                        <td>Gestion des accès / Services réseau</td>
-                    </tr>
-                    <tr>
-                        <td>Câblage RJ45 & préparation de postes</td>
-                        <td><strong>Novix</strong></td>
-                        <td>Installation et maintenance du matériel réseau</td>
+                        <td><a href="#" class="real-link">Déploiement de postes (Tereva)</a></td>
+                        <td>Janv 2026</td>
+                        <td class="check-cell">X</td>
+                        <td class="check-cell">X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+
+        <section class="article-card" style="margin-top: 30px;">
+            <p style="font-size: 0.9em; opacity: 0.8;">
+                * Ce tableau synthétise les activités décrites dans mon portfolio. Il est obligatoire pour l'accessibilité de l'épreuve E5[cite: 12].
+            </p>
         </section>
     </main>
-
 </body>
 </html>
