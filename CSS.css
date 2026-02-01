@@ -242,3 +242,45 @@ body {
     margin-bottom: 0; 
 }
 
+/* =========================
+    STYLE DU TABLEAU SYNTHÈSE
+========================= */
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    color: var(--color-text-light);
+}
+
+.custom-table th {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent); /* Orange pour les titres */
+    padding: 15px;
+    text-align: left;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+.custom-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+/* Effet de surbrillance sur les lignes */
+.custom-table tbody tr {
+    transition: background 0.3s ease;
+}
+
+.custom-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.custom-table strong {
+    color: #ffffff;
+}
+
+
