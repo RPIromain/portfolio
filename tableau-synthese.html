@@ -6,59 +6,66 @@
     <title>Tableau de Synthèse E5 - Romain Piccoli</title>
     <link rel="stylesheet" href="CSS.css">
     <style>
-        /* Styles spécifiques pour le tableau complexe du référentiel */
         .table-container {
-            overflow-x: auto; /* Permet le défilement horizontal sur mobile */
+            overflow-x: auto;
             margin-top: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .matrix-table {
             width: 100%;
             border-collapse: collapse;
             color: white;
-            font-size: 0.85em;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8em;
+            background: rgba(15, 15, 15, 0.5);
         }
 
         .matrix-table th, .matrix-table td {
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 12px 8px;
             text-align: center;
         }
 
+        /* En-têtes conformes au référentiel */
         .matrix-table thead th {
-            background: rgba(241, 196, 15, 0.1); /* Teinte dorée pour l'entête */
-            color: var(--accent);
-            vertical-align: middle;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--accent); /* Ta couleur orange/dorée */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .rotate-text {
             writing-mode: vertical-rl;
             transform: rotate(180deg);
-            white-space: nowrap;
-            padding: 15px 5px;
-            height: 150px;
+            white-space: normal;
+            line-height: 1.2;
+            height: 220px; /* Taille ajustée pour les phrases longues */
+            text-align: left;
+            padding: 10px 5px;
         }
 
         .category-header {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 165, 0, 0.05); /* Légère teinte accent */
             font-weight: bold;
             text-align: left !important;
-            color: #ffffff;
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 0.9em;
         }
 
+        /* Remplacement du vert par ta couleur d'accent */
         .check-cell {
-            color: #2ecc71;
-            font-weight: bold;
-            font-size: 1.2em;
+            color: var(--accent); 
+            font-weight: 900;
+            font-size: 1.4em;
         }
 
         .real-link {
             color: #ffffff;
             text-decoration: none;
-            transition: 0.3s;
+            font-weight: 500;
         }
 
         .real-link:hover {
@@ -99,31 +106,31 @@
 
     <main class="content">
         <header class="content-header">
-            <h1>Tableau de synthèse des réalisations</h1>
-            <p>Récapitulatif des compétences mobilisées durant la formation [cite: 8]</p>
+            <h1>Tableau de synthèse</h1>
+            <p>Récapitulatif des réalisations professionnelles - Session 2026 </p>
         </header>
 
         <div class="table-container">
             <table class="matrix-table">
                 <thead>
                     <tr>
-                        <th rowspan="2">Réalisations professionnelles</th>
-                        <th rowspan="2">Période</th>
-                        <th colspan="6">Compétences du référentiel SISR </th>
+                        <th rowspan="2" style="width: 25%;">Réalisations professionnelles (intitulé et productions) </th>
+                        <th rowspan="2" style="width: 10%;">Période </th>
+                        <th colspan="6">Compétences mises en œuvre (Référentiel SISR) </th>
                     </tr>
                     <tr>
-                        <th class="rotate-text">Gérer le patrimoine</th>
-                        <th class="rotate-text">Répondre aux incidents</th>
-                        <th class="rotate-text">Développer la présence en ligne</th>
-                        <th class="rotate-text">Travailler en mode projet</th>
-                        <th class="rotate-text">Mise à disposition de services</th>
-                        <th class="rotate-text">Développement professionnel</th>
+                        <th class="rotate-text">Gérer le patrimoine informatique </th>
+                        <th class="rotate-text">Répondre aux incidents et aux demandes d'assistance </th>
+                        <th class="rotate-text">Développer la présence en ligne de l'organisation </th>
+                        <th class="rotate-text">Travailler en mode projet </th>
+                        <th class="rotate-text">Mise à disposition des utilisateurs d'un service </th>
+                        <th class="rotate-text">Organiser son développement professionnel </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td colspan="8" class="category-header">Réalisations en cours de formation</td></tr>
+                    <tr><td colspan="8" class="category-header">Réalisations en cours de formation </td></tr>
                     <tr>
-                        <td><a href="#" class="real-link">Atelier de professionnalisation : Virtualisation</a></td>
+                        <td><a href="#" class="real-link">Atelier : Infrastructure de Virtualisation</a></td>
                         <td>2024</td>
                         <td class="check-cell">X</td>
                         <td></td>
@@ -133,7 +140,7 @@
                         <td></td>
                     </tr>
 
-                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (1ère année)</td></tr>
+                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (1ère année) </td></tr>
                     <tr>
                         <td><a href="realisations-hyleance.html" class="real-link">Administration AD & GPO (Hyléance)</a></td>
                         <td>Mai 2025</td>
@@ -145,9 +152,9 @@
                         <td></td>
                     </tr>
 
-                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (2ème année)</td></tr>
+                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (2ème année) </td></tr>
                     <tr>
-                        <td><a href="#" class="real-link">Déploiement de postes (Tereva)</a></td>
+                        <td><a href="#" class="real-link">Déploiement et sécurisation de postes (Tereva)</a></td>
                         <td>Janv 2026</td>
                         <td class="check-cell">X</td>
                         <td class="check-cell">X</td>
@@ -161,8 +168,9 @@
         </div>
 
         <section class="article-card" style="margin-top: 30px;">
-            <p style="font-size: 0.9em; opacity: 0.8;">
-                * Ce tableau synthétise les activités décrites dans mon portfolio. Il est obligatoire pour l'accessibilité de l'épreuve E5[cite: 12].
+            <p style="font-size: 0.85em; opacity: 0.7; font-style: italic;">
+                Ce tableau est un document obligatoire pour l'épreuve E5 du BTS SIO[cite: 52, 56]. 
+                Il permet au jury de vérifier par sondage le degré de maîtrise des compétences[cite: 71].
             </p>
         </section>
     </main>
