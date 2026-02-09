@@ -2,7 +2,6 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réalisations - Hyléance</title>
     <link rel="stylesheet" href="CSS.css">
 </head>
@@ -17,21 +16,19 @@
             <li><a href="Mes-Stages.html">Mes Stages</a></li>
             <li><a href="Veille-Technologique.html">Veille Technologique</a></li>
             <li><a href="tableau-synthese.html">Tableau de synthèse</a></li>
-
         </ul>
     </nav>
 
     <div class="sidebar-footer">
-        
         <div class="status-badge">
             <div class="status-dot"></div>
-            <span style="font-size: 0.75em; color: #2ecc71; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Disponible</span>
-            <p style="font-size: 0.8em; margin-top: 5px; color: var(--color-text-muted);">Alternance 2026/2027</p>
+            <span>Disponible</span>
+            <p>Alternance 2026/2027</p>
         </div>
 
         <div class="social-links">
-            <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn">in</a>
-            <a href="mailto:romainpiccoli0@gmail.com" title="Contact">@</a>
+            <a href="https://www.linkedin.com/" target="_blank">in</a>
+            <a href="mailto:romainpiccoli0@gmail.com">@</a>
         </div>
 
         <p style="font-size: 0.7em; color: rgba(255,255,255,0.3); text-align: center; margin-top: 20px;">
@@ -43,120 +40,76 @@
 <main class="content">
 
 <header class="content-header">
-    <h1>Réalisations professionnelles – Hyléance</h1>
-    <p>Administration d’une infrastructure hybride AD / Microsoft Entra ID sécurisée par EDR</p>
+    <h1>Réalisations – Hyléance</h1>
+    <p>Sécurisation de l’infrastructure, supervision SI et protection de l’ERP</p>
 </header>
 
-<section class="article-card">
-    <h2>Contexte de l’infrastructure</h2>
-    <p>
-        Hyléance dispose d’une infrastructure hybride composée d’un Active Directory local
-        gérant les comptes ordinateurs et utilisateurs, ainsi qu’un environnement Microsoft Entra ID
-        pour les services Microsoft 365.
-        Les identités ne sont pas synchronisées, ce qui implique une gestion distincte
-        des comptes AD et des comptes Microsoft.
+<!-- PHOTO SCHEMA -->
+<section class="stage-card">
+    <h2>Schéma de l’architecture de sécurité</h2>
+    <img src="images/hyleance-schema.jpg" alt="Schéma architecture Hyléance" style="width:100%; border-radius:12px; margin-top:15px;">
+    <p style="margin-top:15px;">
+        Schéma représentant la chaîne de sécurité mise en place pour protéger le système d'information et en priorité le serveur ERP (niveau Silver).
     </p>
 </section>
 
 <section class="article-card">
-    <h2>Sécurité de l’infrastructure</h2>
-    <ul class="sisr-puces">
-        <li>Protection des postes par WithSecure Elements EDR (détection comportementale par IA)</li>
-        <li>Surveillance des menaces en temps réel sur les endpoints</li>
-        <li>Gestion des postes intégrés au domaine AD</li>
-    </ul>
-</section>
-
-<section class="article-card">
-    <h2>Actions réalisées</h2>
-    <ul class="sisr-puces">
-        <li>Création et organisation des OU dans l’Active Directory</li>
-        <li>Création des comptes utilisateurs et groupes de sécurité</li>
-        <li>Attribution des droits sur les partages réseau</li>
-        <li>Mise en place et modification de GPO de sécurité</li>
-        <li>Gestion des demandes via l’outil de ticketing</li>
-        <li>Procédures d’onboarding et d’offboarding utilisateurs</li>
-        <li>Vérification de la conformité des postes protégés par l’EDR</li>
-    </ul>
-</section>
-
-<section class="article-card">
-    <h2>Gestion des identités</h2>
+    <h2>Compréhension de l’architecture</h2>
     <p>
-        Les utilisateurs disposent de deux comptes distincts :
+        L’infrastructure est organisée par niveaux de criticité : <strong>Gold, Silver et Bronze</strong>.
+        Le niveau <strong>Silver correspond au serveur ERP</strong>, cœur du système d’information, bénéficiant des protections les plus renforcées.
     </p>
     <ul class="sisr-puces">
-        <li>Un compte Active Directory pour l’ouverture de session sur les postes du domaine</li>
-        <li>Un compte Microsoft Entra ID pour l’accès aux services Microsoft 365</li>
+        <li>Les postes utilisateurs sont protégés par un EDR WithSecure basé sur l’IA</li>
+        <li>Les événements sont centralisés dans un SIEM (Wazuh / Graylog / Elastic)</li>
+        <li>Un SOC analyse les alertes et intervient en cas d’anomalie</li>
+        <li>Active Directory gère les identités locales (utilisateurs et postes)</li>
+        <li>Microsoft Entra permet l’authentification Cloud (comptes Microsoft 365)</li>
+        <li>Un Bastion AD sécurise les accès administrateurs</li>
+        <li>LAPS sécurise les mots de passe administrateur locaux</li>
     </ul>
-    <p>
-        Cette organisation nécessite une gestion rigoureuse des mots de passe et des accès.
+</section>
+
+<!-- PHOTO AD / BASTION -->
+<section class="stage-card">
+    <h2>Sécurisation des accès privilégiés</h2>
+    <img src="images/hyleance-bastion.jpg" alt="Bastion Active Directory" style="width:100%; border-radius:12px; margin-top:15px;">
+    <p style="margin-top:15px;">
+        Mise en place d’un modèle de sécurité AD avec bastion, tiering model et gestion sécurisée des comptes administrateurs.
     </p>
 </section>
 
 <section class="article-card">
-    <h2>Stratégie de sauvegarde</h2>
-    <p>
-        L’entreprise applique la règle de sauvegarde professionnelle <strong>3-2-1-1-0</strong> :
-    </p>
+    <h2>Sauvegarde et continuité de service</h2>
     <ul class="sisr-puces">
-        <li>3 copies des données</li>
-        <li>2 supports différents</li>
-        <li>1 copie externalisée hors site</li>
-        <li>1 copie immuable contre les ransomwares</li>
-        <li>0 erreur vérifiée lors des tests de restauration</li>
+        <li>Application de la règle de sauvegarde <strong>3-2-1-1-0</strong></li>
+        <li>Mise en place d’un PRA (Plan de Reprise d’Activité)</li>
+        <li>Mise en place d’un PCA (Plan de Continuité d’Activité)</li>
+        <li>Stockage haute disponibilité via DataCore</li>
     </ul>
+</section>
+
+<!-- PHOTO EDR -->
+<section class="stage-card">
+    <h2>Protection des postes utilisateurs</h2>
+    <img src="images/hyleance-edr.jpg" alt="EDR WithSecure" style="width:100%; border-radius:12px; margin-top:15px;">
+    <p style="margin-top:15px;">
+        Les postes sont équipés d’un EDR WithSecure capable de détecter les comportements malveillants grâce à l’analyse comportementale par IA.
+    </p>
 </section>
 
 <section class="article-card">
-    <h2>Compétences SIO mobilisées</h2>
+    <h2>Compétences mobilisées</h2>
     <ul class="sisr-puces">
-        <li>Gérer le patrimoine informatique</li>
-        <li>Mettre à disposition des services informatiques</li>
-        <li>Répondre aux incidents et aux demandes d’assistance</li>
-        <li>Sécuriser une infrastructure</li>
+        <li>Architecture de sécurité SI</li>
+        <li>Supervision et SIEM</li>
+        <li>Sécurisation Active Directory</li>
+        <li>Gestion des identités AD / Entra</li>
+        <li>Stratégie de sauvegarde avancée</li>
+        <li>EDR et détection comportementale</li>
     </ul>
 </section>
-
-    <section class="article-card">
-    <h2>Architecture de sécurité et de continuité du SI</h2>
-
-    <p>
-        L’infrastructure mise en place chez Hyléance repose sur une architecture combinant
-        un Active Directory local et Microsoft Entra ID afin d’étendre la gestion des identités
-        vers le cloud tout en conservant une maîtrise locale des postes et des comptes ordinateurs.
-    </p>
-
-    <ul class="sisr-puces">
-        <li><strong>Active Directory</strong> gère les identités locales, les postes et les droits d’accès au réseau interne.</li>
-        <li><strong>Microsoft Entra ID</strong> permet l’accès sécurisé aux services Microsoft 365 dans le cloud.</li>
-        <li><strong>WithSecure Elements EDR</strong> utilise des mécanismes d’analyse comportementale (IA) pour détecter les menaces sur les postes.</li>
-        <li><strong>SIEM</strong> : centralisation et corrélation des événements de sécurité du système d’information.</li>
-        <li><strong>LAPS</strong> sécurise les mots de passe administrateur locaux des postes du domaine.</li>
-        <li><strong>Bastion Active Directory</strong> : protection des accès à privilèges pour limiter les risques d’attaque.</li>
-    </ul>
-
-    <p>
-        Les données de l’entreprise sont protégées grâce à une stratégie de sauvegarde respectant
-        la règle professionnelle <strong>3-2-1-1-0</strong>, garantissant la résilience face aux ransomwares
-        et aux pertes de données.
-    </p>
-
-    <ul class="sisr-puces">
-        <li><strong>PRA (Plan de Reprise d’Activité)</strong> : redémarrage du SI après un incident majeur.</li>
-        <li><strong>PCA (Plan de Continuité d’Activité)</strong> : maintien du fonctionnement du SI sans interruption.</li>
-        <li><strong>DataCore</strong> assure un stockage hautement disponible permettant de supporter l’ensemble de l’infrastructure.</li>
-    </ul>
-
-    <p>
-        Cette organisation permet de détecter et de bloquer une attaque avant même que
-        l’utilisateur final ne s’en rende compte, tout en garantissant la continuité de service.
-    </p>
-</section>
-
 
 </main>
 </body>
 </html>
-
-
