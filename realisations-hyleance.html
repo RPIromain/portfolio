@@ -118,7 +118,45 @@
     </ul>
 </section>
 
+    <section class="article-card">
+    <h2>Architecture de sécurité et de continuité du SI</h2>
+
+    <p>
+        L’infrastructure mise en place chez Hyléance repose sur une architecture combinant
+        un Active Directory local et Microsoft Entra ID afin d’étendre la gestion des identités
+        vers le cloud tout en conservant une maîtrise locale des postes et des comptes ordinateurs.
+    </p>
+
+    <ul class="sisr-puces">
+        <li><strong>Active Directory</strong> gère les identités locales, les postes et les droits d’accès au réseau interne.</li>
+        <li><strong>Microsoft Entra ID</strong> permet l’accès sécurisé aux services Microsoft 365 dans le cloud.</li>
+        <li><strong>WithSecure Elements EDR</strong> utilise des mécanismes d’analyse comportementale (IA) pour détecter les menaces sur les postes.</li>
+        <li><strong>SIEM</strong> : centralisation et corrélation des événements de sécurité du système d’information.</li>
+        <li><strong>LAPS</strong> sécurise les mots de passe administrateur locaux des postes du domaine.</li>
+        <li><strong>Bastion Active Directory</strong> : protection des accès à privilèges pour limiter les risques d’attaque.</li>
+    </ul>
+
+    <p>
+        Les données de l’entreprise sont protégées grâce à une stratégie de sauvegarde respectant
+        la règle professionnelle <strong>3-2-1-1-0</strong>, garantissant la résilience face aux ransomwares
+        et aux pertes de données.
+    </p>
+
+    <ul class="sisr-puces">
+        <li><strong>PRA (Plan de Reprise d’Activité)</strong> : redémarrage du SI après un incident majeur.</li>
+        <li><strong>PCA (Plan de Continuité d’Activité)</strong> : maintien du fonctionnement du SI sans interruption.</li>
+        <li><strong>DataCore</strong> assure un stockage hautement disponible permettant de supporter l’ensemble de l’infrastructure.</li>
+    </ul>
+
+    <p>
+        Cette organisation permet de détecter et de bloquer une attaque avant même que
+        l’utilisateur final ne s’en rende compte, tout en garantissant la continuité de service.
+    </p>
+</section>
+
+
 </main>
 </body>
 </html>
+
 
