@@ -5,10 +5,14 @@
     --color-dark-bg: #0d1117;
     --color-text-light: #ffffff;
     --color-text-muted: #b8c1c8;
-    --green-1: rgba(15, 76, 76, 0.88);
-    --green-2: rgba(18, 60, 60, 0.88);
-    --green-sisr: #2ecc71;
-    --accent: #f39c12; /* Orange SLAM */
+    
+    /* Harmonisation ORANGE / OR (Plus de vert) */
+    --accent: #f39c12; 
+    --accent-glow: rgba(243, 156, 18, 0.3);
+    
+    /* Dégradés mis à jour pour le Header */
+    --gradient-header: linear-gradient(135deg, #4d330f 0%, #2c1e0a 100%);
+    
     --border-radius: 22px;
 }
 
@@ -50,7 +54,7 @@ body {
     display: block;
     padding: 12px 22px;
     color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
+    text-decoration: none !important;
     font-weight: 500;
     transition: 0.25s;
 }
@@ -61,7 +65,7 @@ body {
 }
 
 /* =========================
-    3. FOOTER SIDEBAR & NÉON
+    3. FOOTER SIDEBAR & STATUT (ORANGE)
 ========================= */
 .sidebar-footer {
     margin-top: auto; 
@@ -73,30 +77,30 @@ body {
 }
 
 .status-badge {
-    background: rgba(46, 204, 113, 0.05);
-    border: 1px solid #2ecc71;
+    background: rgba(243, 156, 18, 0.1); /* Fond orange léger */
+    border: 1px solid var(--accent); /* Bordure orange */
     border-radius: 12px;
     padding: 12px 10px;
     text-align: center;
     width: 100%;
     margin-bottom: 15px;
-    box-shadow: 0 0 10px rgba(46, 204, 113, 0.2);
+    box-shadow: 0 0 10px rgba(243, 156, 18, 0.2);
     transition: 0.3s ease;
 }
 
 .status-badge:hover {
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.4);
     transform: translateY(-2px);
 }
 
 .status-dot {
     width: 8px;
     height: 8px;
-    background: #2ecc71;
+    background: var(--accent); /* Point orange */
     border-radius: 50%;
     display: inline-block;
     margin-right: 5px;
-    box-shadow: 0 0 8px #2ecc71, 0 0 15px #2ecc71;
+    box-shadow: 0 0 8px var(--accent), 0 0 15px var(--accent);
 }
 
 .status-badge span {
@@ -116,14 +120,14 @@ body {
 .social-links a {
     color: var(--color-text-muted);
     font-size: 1.2em;
-    text-decoration: none;
+    text-decoration: none !important;
     transition: 0.3s;
 }
 
 .social-links a:hover { color: var(--accent); }
 
 /* =========================
-    4. CONTENU & GLASSMORPHISM (FIX ANIMATION)
+    4. CONTENU & GLASSMORPHISM
 ========================= */
 .content { 
     flex: 1; 
@@ -131,7 +135,6 @@ body {
     max-width: 1100px; 
 }
 
-/* On cible précisément toutes tes cartes */
 .content-header, .accueil-header, .bubble-card, .stage-card, 
 .article-card, .list-section, .section-apropos, .summary-card {
     background: rgba(255, 255, 255, 0.05);
@@ -142,23 +145,14 @@ body {
     padding: 32px;
     margin-bottom: 24px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    
-    /* Animation fluide */
-    transition: all 0.3s ease-in-out;
-}
-
-/* L'EFFET DE ZOOM (HIVER) */
-.content-header:hover, .accueil-header:hover, .bubble-card:hover, .stage-card:hover, 
-.article-card:hover, .list-section:hover, .section-apropos:hover, .summary-card:hover {
-    transform: translateY(-5px) scale(1.02); /* Monte un peu et grossit */
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                box-shadow 0.4s ease, 
+                background 0.4s ease;
 }
 
 /* EFFET AU SURVOL */
-.content-header:hover, .accueil-header:hover, .bubble-card:hover, .stage-card:hover, 
-.article-card:hover, .list-section:hover, .section-apropos:hover, .summary-card:hover {
+.content-header:hover, .bubble-card:hover, .stage-card:hover, 
+.article-card:hover, .section-apropos:hover, .summary-card:hover {
     transform: scale(1.02); 
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     background: rgba(255, 255, 255, 0.08);
@@ -166,11 +160,31 @@ body {
 }
 
 .content-header {
-    background: linear-gradient(135deg, var(--green-1), var(--green-2));
+    background: var(--gradient-header);
 }
 
 /* =========================
-    5. SYSTÈME DES POINTS (SISR/SLAM)
+    5. DURÉE DES STAGES (HAUT DROITE)
+========================= */
+.stage-card {
+    position: relative; /* Nécessaire pour placer la durée */
+}
+
+.card-duration {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: rgba(243, 156, 18, 0.15);
+    border: 1px solid var(--accent);
+    padding: 6px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.85em;
+    color: var(--accent) !important; /* Texte durée en orange */
+}
+
+/* =========================
+    6. SYSTÈME DES POINTS (TOUS EN ORANGE)
 ========================= */
 .content ul { list-style: none; }
 
@@ -182,26 +196,32 @@ body {
     color: var(--color-text-muted);
 }
 
-.content li::before {
+/* Tous les points (même SISR) passent en ORANGE */
+.content li::before, 
+.sisr-puces li::before,
+.card-details.sisr-puces li::before {
     content: "•";
     position: absolute;
     left: 0;
     font-size: 1.3em;
-    color: var(--accent); /* Orange par défaut */
-}
-
-/* Vert SISR (Priorité maximale) */
-.sisr-puces li::before,
-.card-details.sisr-puces li::before,
-.list-section h3[style*="color: #2ecc71"] + .card-details li::before {
-    color: var(--green-sisr) !important;
+    color: var(--accent) !important;
 }
 
 /* =========================
-    6. BOUTONS & LIENS (FIX DÉFINITIF)
+    7. LIENS (SANS SOULIGNEMENT)
 ========================= */
+.content a:not(.sidebar a):not(.download-btn) {
+    color: var(--accent) !important;
+    font-weight: 600;
+    text-decoration: none !important; /* Supprime le soulignement */
+    transition: 0.3s;
+}
 
-/* Le bouton spécifique avec son dégradé */
+.content a:hover {
+    color: #ffffff !important;
+}
+
+/* Bouton téléchargement */
 .download-btn {
     display: inline-flex;
     align-items: center;
@@ -210,86 +230,41 @@ body {
     padding: 12px 25px;
     border-radius: 12px;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: 0.3s ease;
-    
-    /* ON FORCE LE BLANC ICI */
     color: #ffffff !important; 
     text-decoration: none !important;
 }
 
-.download-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    filter: brightness(1.1);
-    color: #ffffff !important;
-}
-
-/* On s'assure que les autres éléments badges/durée restent blancs aussi */
-.card-duration, 
-.status-badge span {
-    color: #ffffff !important;
-}
-
-/* Les liens normaux dans le texte restent en jaune */
-.content a:not(.sidebar a):not(.download-btn) {
-    color: #f1c40f !important;
-    font-weight: 600;
-}
-
 /* =========================
-    7. GRID ACCUEIL
+    8. GRILLES & TABLEAUX
 ========================= */
 .summary-cards { 
     display: flex; 
     gap: 20px; 
 }
 
-.summary-card { 
-    flex: 1; 
-    margin-bottom: 0; 
-}
+.summary-card { flex: 1; }
 
-/* =========================
-    STYLE DU TABLEAU SYNTHÈSE
-========================= */
-.custom-table {
+.matrix-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
-    color: var(--color-text-light);
+    color: white;
+    font-size: 0.85em;
 }
 
-.custom-table th {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--accent); /* Orange pour les titres */
-    padding: 15px;
-    text-align: left;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-    text-transform: uppercase;
-    font-size: 0.9em;
-    letter-spacing: 1px;
+.matrix-table th, .matrix-table td {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    text-align: center;
 }
 
-.custom-table td {
-    padding: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    font-size: 0.95em;
-    line-height: 1.4;
+.rotate-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    height: 180px;
 }
 
-/* Effet de surbrillance sur les lignes */
-.custom-table tbody tr {
-    transition: background 0.3s ease;
+.check-cell {
+    color: var(--accent); /* Croix en orange */
+    font-weight: bold;
+    font-size: 1.3em;
 }
-
-.custom-table tbody tr:hover {
-    background: rgba(255, 255, 255, 0.03);
-}
-
-.custom-table strong {
-    color: #ffffff;
-}
-
-
-
