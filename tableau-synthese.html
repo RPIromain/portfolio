@@ -27,10 +27,9 @@
             text-align: center;
         }
 
-        /* En-têtes conformes au référentiel */
         .matrix-table thead th {
             background: rgba(255, 255, 255, 0.05);
-            color: var(--accent); /* Ta couleur orange/dorée */
+            color: var(--accent);
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -41,21 +40,20 @@
             transform: rotate(180deg);
             white-space: normal;
             line-height: 1.2;
-            height: 220px; /* Taille ajustée pour les phrases longues */
+            height: 220px;
             text-align: left;
             padding: 10px 5px;
         }
 
         .category-header {
-            background: rgba(255, 165, 0, 0.05); /* Légère teinte accent */
+            background: rgba(243, 156, 18, 0.05);
             font-weight: bold;
             text-align: left !important;
             color: var(--accent);
             text-transform: uppercase;
-            font-size: 0.9em;
+            padding: 15px !important;
         }
 
-        /* Remplacement du vert par ta couleur d'accent */
         .check-cell {
             color: var(--accent); 
             font-weight: 900;
@@ -66,11 +64,11 @@
             color: #ffffff;
             text-decoration: none;
             font-weight: 500;
+            transition: 0.3s;
         }
 
         .real-link:hover {
             color: var(--accent);
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -91,9 +89,10 @@
         <div class="sidebar-footer">
             <div class="status-badge">
                 <div class="status-dot"></div>
-                <span style="font-size: 0.75em; color: #2ecc71; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Disponible</span>
+                <span>Disponible</span>
                 <p style="font-size: 0.8em; margin-top: 5px; color: var(--color-text-muted);">Alternance 2026/2027</p>
             </div>
+
             <div class="social-links">
                 <a href="https://www.linkedin.com/" target="_blank">in</a>
                 <a href="mailto:romainpiccoli0@gmail.com">@</a>
@@ -107,60 +106,80 @@
     <main class="content">
         <header class="content-header">
             <h1>Tableau de synthèse</h1>
-            <p>Récapitulatif des réalisations professionnelles - Session 2026 </p>
+            <p>Récapitulatif des réalisations professionnelles - Session 2026</p>
         </header>
 
         <div class="table-container">
             <table class="matrix-table">
                 <thead>
                     <tr>
-                        <th rowspan="2" style="width: 25%;">Réalisations professionnelles (intitulé et productions) </th>
-                        <th rowspan="2" style="width: 10%;">Période </th>
-                        <th colspan="6">Compétences mises en œuvre (Référentiel SISR) </th>
+                        <th rowspan="2" style="width: 25%;">Réalisations professionnelles</th>
+                        <th rowspan="2" style="width: 10%;">Période</th>
+                        <th colspan="6">Compétences mises en œuvre (Référentiel SISR)</th>
                     </tr>
                     <tr>
-                        <th class="rotate-text">Gérer le patrimoine informatique </th>
-                        <th class="rotate-text">Répondre aux incidents et aux demandes d'assistance </th>
-                        <th class="rotate-text">Développer la présence en ligne de l'organisation </th>
-                        <th class="rotate-text">Travailler en mode projet </th>
-                        <th class="rotate-text">Mise à disposition des utilisateurs d'un service </th>
-                        <th class="rotate-text">Organiser son développement professionnel </th>
+                        <th class="rotate-text">Gérer le patrimoine informatique</th>
+                        <th class="rotate-text">Répondre aux incidents et aux demandes</th>
+                        <th class="rotate-text">Développer la présence en ligne</th>
+                        <th class="rotate-text">Travailler en mode projet</th>
+                        <th class="rotate-text">Mise à disposition d'un service</th>
+                        <th class="rotate-text">Organiser son développement professionnel</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td colspan="8" class="category-header">Réalisations en cours de formation </td></tr>
+                    <tr><td colspan="8" class="category-header">Réalisations en cours de formation</td></tr>
                     <tr>
-                        <td><a href="#" class="real-link">Atelier : Infrastructure de Virtualisation</a></td>
+                        <td><a href="#" class="real-link">Infrastructure de virtualisation sous VMware / Proxmox</a></td>
                         <td>2024</td>
                         <td class="check-cell">X</td>
                         <td></td>
                         <td></td>
                         <td class="check-cell">X</td>
                         <td class="check-cell">X</td>
+                        <td class="check-cell">X</td>
+                    </tr>
+                    <tr>
+                        <td><a href="realisations-ipc-linux.html" class="real-link">Installation et configuration d’un serveur Linux – Atelier</a></td>
+                        <td>2025</td>
+                        <td class="check-cell">X</td>
                         <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="check-cell">X</td>
+                        <td class="check-cell">X</td>
                     </tr>
 
-                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (1ère année) </td></tr>
+                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (1ère année)</td></tr>
                     <tr>
-                        <td><a href="realisations-hyleance.html" class="real-link">Administration AD & GPO (Hyléance)</a></td>
+                        <td><a href="realisations-hyleance.html" class="real-link">Déploiement d’une GPO silencieuse – Hyléance</a></td>
                         <td>Mai 2025</td>
                         <td class="check-cell">X</td>
                         <td class="check-cell">X</td>
                         <td></td>
-                        <td></td>
+                        <td class="check-cell">X</td>
                         <td class="check-cell">X</td>
                         <td></td>
                     </tr>
 
-                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (2ème année) </td></tr>
+                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (2ème année)</td></tr>
                     <tr>
-                        <td><a href="#" class="real-link">Déploiement et sécurisation de postes (Tereva)</a></td>
+                        <td><a href="realisations-tereva-glpi.html" class="real-link">Gestion des incidents et des demandes via GLPI – Tereva</a></td>
                         <td>Janv 2026</td>
                         <td class="check-cell">X</td>
                         <td class="check-cell">X</td>
                         <td></td>
                         <td></td>
+                        <td class="check-cell">X</td>
+                        <td class="check-cell">X</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" class="real-link">Déploiement et sécurisation de postes – Tereva</a></td>
+                        <td>Janv 2026</td>
+                        <td class="check-cell">X</td>
+                        <td class="check-cell">X</td>
                         <td></td>
+                        <td></td>
+                        <td class="check-cell">X</td>
                         <td></td>
                     </tr>
                 </tbody>
@@ -169,8 +188,7 @@
 
         <section class="article-card" style="margin-top: 30px;">
             <p style="font-size: 0.85em; opacity: 0.7; font-style: italic;">
-                Ce tableau est un document obligatoire pour l'épreuve E5 du BTS SIO[cite: 52, 56]. 
-                Il permet au jury de vérifier par sondage le degré de maîtrise des compétences[cite: 71].
+                Ce tableau est un document obligatoire pour l'épreuve E5 du BTS SIO. Il récapitule les compétences acquises durant les projets et stages.
             </p>
         </section>
     </main>
