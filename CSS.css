@@ -146,7 +146,7 @@ body {
     color: var(--color-text-muted);
 }
 
-/* Points Orange par défaut */
+/* Points Orange par défaut partout */
 .content li::before {
     content: "•";
     position: absolute;
@@ -155,16 +155,16 @@ body {
     color: var(--accent) !important;
 }
 
-/* Exception pour SISR : Points Verts */
+/* Points Verts spécifiques pour SISR */
 .green-puces-list li::before {
     color: var(--neon-green) !important;
 }
 
 /* =========================
-    6. BLOCS SPÉCIFIQUES OPTIONS (SISR & SLAM)
+    6. BLOCS SISR & SLAM (ENCADRÉS)
 ========================= */
 
-/* Bloc SISR : Encadré VERT */
+/* Bloc SISR : Cadre Vert */
 .sisr-block {
     border: 1px solid var(--neon-green) !important;
     background: rgba(46, 204, 113, 0.05) !important;
@@ -174,7 +174,7 @@ body {
     margin-top: 15px;
 }
 
-/* Bloc SLAM : Encadré ORANGE */
+/* Bloc SLAM : Cadre Orange */
 .slam-block {
     border: 1px solid var(--accent) !important;
     background: rgba(243, 156, 18, 0.05) !important;
@@ -206,3 +206,4 @@ body {
     white-space: normal;
     text-align: left;
 }
+
