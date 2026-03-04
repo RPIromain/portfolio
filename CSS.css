@@ -10,7 +10,7 @@
     --accent: #f39c12; 
     --accent-glow: rgba(243, 156, 18, 0.3);
     
-    /* LE SEUL VERT NÉON DU SITE */
+    /* COULEUR SISR / DISPONIBILITÉ */
     --neon-green: #2ecc71;
     --neon-green-glow: rgba(46, 204, 113, 0.4);
     
@@ -67,7 +67,7 @@ body {
 }
 
 /* =========================
-    3. FOOTER SIDEBAR & STATUT (LE SEUL VERT DU SITE)
+    3. FOOTER SIDEBAR & STATUT
 ========================= */
 .sidebar-footer {
     margin-top: auto; 
@@ -79,14 +79,13 @@ body {
 }
 
 .status-badge {
-    background: rgba(46, 204, 113, 0.05); /* Fond vert très léger */
-    border: 2px solid #2ecc71; /* Bordure VERT NÉON */
+    background: rgba(46, 204, 113, 0.05);
+    border: 2px solid var(--neon-green);
     border-radius: 12px;
     padding: 12px 10px;
     text-align: center;
     width: 100%;
     margin-bottom: 15px;
-    /* Effet de lueur (glow) vert */
     box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
     transition: 0.3s ease;
 }
@@ -99,23 +98,21 @@ body {
 .status-dot {
     width: 10px;
     height: 10px;
-    background: #2ecc71; /* Point VERT NÉON */
+    background: var(--neon-green);
     border-radius: 50%;
     display: inline-block;
     margin-right: 8px;
-    /* Halo lumineux autour du point */
-    box-shadow: 0 0 8px #2ecc71, 0 0 15px #2ecc71;
+    box-shadow: 0 0 8px var(--neon-green), 0 0 15px var(--neon-green);
 }
 
 .status-badge span {
-    color: #2ecc71 !important; /* Texte "DISPONIBLE" en VERT */
+    color: var(--neon-green) !important;
     font-size: 0.75em;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* On garde les réseaux sociaux en gris/orange pour ne pas faire d'ombre au vert */
 .social-links {
     display: flex;
     justify-content: center;
@@ -141,7 +138,8 @@ body {
     max-width: 1100px; 
 }
 
-.content-header, .accueil-header, .bubble-card, .stage-card, 
+/* Application globale de l'effet verre dépoli */
+.content-header, .bts-header-card, .accueil-header, .bubble-card, .stage-card, 
 .article-card, .list-section, .section-apropos, .summary-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px) saturate(150%);
@@ -153,28 +151,31 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
                 box-shadow 0.4s ease, 
-                background 0.4s ease;
+                border 0.4s ease;
 }
 
-/* EFFET AU SURVOL */
-.content-header:hover, .bubble-card:hover, .stage-card:hover, 
+/* Correction du Hover : on ne touche pas au background pour garder le dégradé marron */
+.content-header:hover, .bts-header-card:hover, .bubble-card:hover, .stage-card:hover, 
 .article-card:hover, .section-apropos:hover, .summary-card:hover {
     transform: scale(1.02); 
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
+/* Background dégradé par défaut (Marron/Orange) */
 .content-header {
     background: var(--gradient-header);
 }
 
-/* =========================
-    5. DURÉE DES STAGES (HAUT DROITE)
-========================= */
-.stage-card {
-    position: relative; /* Nécessaire pour placer la durée */
+/* Spécificité BTS SIO : Pas de marron, juste du Glassmorphism */
+.bts-header-card {
+    background: rgba(255, 255, 255, 0.05) !important;
 }
+
+/* =========================
+    5. DURÉE DES STAGES
+========================= */
+.stage-card { position: relative; }
 
 .card-duration {
     position: absolute;
@@ -186,14 +187,13 @@ body {
     border-radius: 10px;
     font-weight: bold;
     font-size: 0.85em;
-    color: var(--accent) !important; /* Texte durée en orange */
+    color: var(--accent) !important;
 }
 
 /* =========================
-    6. SYSTÈME DES POINTS (TOUS EN ORANGE)
+    6. SYSTÈME DES POINTS
 ========================= */
 .content ul { list-style: none; }
-
 .content li {
     position: relative;
     padding-left: 25px;
@@ -202,10 +202,8 @@ body {
     color: var(--color-text-muted);
 }
 
-/* Tous les points (même SISR) passent en ORANGE */
-.content li::before, 
-.sisr-puces li::before,
-.card-details.sisr-puces li::before {
+/* Points Orange par défaut */
+.content li::before {
     content: "•";
     position: absolute;
     left: 0;
@@ -213,21 +211,23 @@ body {
     color: var(--accent) !important;
 }
 
+/* Exception pour le bloc SISR : Points Verts */
+.green-puces-list li::before {
+    color: var(--neon-green) !important;
+}
+
 /* =========================
-    7. LIENS (SANS SOULIGNEMENT)
+    7. LIENS & BOUTONS
 ========================= */
 .content a:not(.sidebar a):not(.download-btn) {
     color: var(--accent) !important;
     font-weight: 600;
-    text-decoration: none !important; /* Supprime le soulignement */
+    text-decoration: none !important;
     transition: 0.3s;
 }
 
-.content a:hover {
-    color: #ffffff !important;
-}
+.content a:hover { color: #ffffff !important; }
 
-/* Bouton téléchargement */
 .download-btn {
     display: inline-flex;
     align-items: center;
@@ -241,18 +241,14 @@ body {
 }
 
 /* =========================
-    8. GRILLES & TABLEAUX
+    8. GRILLES & TABLEAU DE SYNTHÈSE
 ========================= */
-.summary-cards { 
-    display: flex; 
-    gap: 20px; 
-}
-
+.summary-cards { display: flex; gap: 20px; }
 .summary-card { flex: 1; }
 
 .matrix-table {
     width: 100%;
-    table-layout: fixed; /* INDISPENSABLE : empêche le tableau de déborder */
+    table-layout: fixed; /* Empêche le débordement */
     border-collapse: collapse;
     color: white;
     font-size: 0.85em;
@@ -260,60 +256,32 @@ body {
 
 .matrix-table th, .matrix-table td {
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px; /* Réduit un peu pour gagner de la place */
+    padding: 8px;
     text-align: center;
-    overflow: hidden; /* Coupe ce qui dépasse */
+    overflow: hidden;
 }
 
 .rotate-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    height: 200px; /* Augmenté pour tes textes longs */
-    white-space: normal; /* Autorise le retour à la ligne dans la cellule */
+    height: 200px;
+    white-space: normal;
     line-height: 1.1;
     text-align: left;
 }
+
 .check-cell {
-    color: var(--accent); /* Croix en orange */
+    color: var(--accent);
     font-weight: bold;
     font-size: 1.3em;
 }
-/* =========================
-    9. FIX SPECIFIQUE BTS SIO
-========================= */
 
-/* Header BTS SIO : On remet l'effet Glassmorphism et on ajuste le padding */
-.bts-header-card {
-    background: rgba(255, 255, 255, 0.05) !important; 
-    backdrop-filter: blur(20px) saturate(150%); /* L'effet de flou */
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    padding: 32px; /* Pour être aligné avec les autres cartes */
-    border-radius: var(--border-radius);
-    margin-bottom: 24px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
-
-/* Bloc SISR : Glassmorphism léger avec bordure verte néon */
+/* Bloc SISR spécifique (encadré vert glassmorphism) */
 .sisr-block {
+    border: 1px solid var(--neon-green) !important;
     background: rgba(46, 204, 113, 0.05) !important;
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--neon-green) !important;
     border-radius: var(--border-radius);
-    padding: 25px;
-    margin-top: 20px;
+    padding: 20px;
+    margin-top: 15px;
 }
-
-/* Force les puces en VERT pour le bloc SISR uniquement */
-.green-puces-list li::before {
-    content: "•" !important;
-    color: var(--neon-green) !important;
-    position: absolute;
-    left: 0;
-    font-size: 1.3em;
-    font-weight: bold;
-}
-
-
-
