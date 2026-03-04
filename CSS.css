@@ -252,6 +252,7 @@ body {
 
 .matrix-table {
     width: 100%;
+    table-layout: fixed; /* INDISPENSABLE : empêche le tableau de déborder */
     border-collapse: collapse;
     color: white;
     font-size: 0.85em;
@@ -259,16 +260,19 @@ body {
 
 .matrix-table th, .matrix-table td {
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 12px;
+    padding: 8px; /* Réduit un peu pour gagner de la place */
     text-align: center;
+    overflow: hidden; /* Coupe ce qui dépasse */
 }
 
 .rotate-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    height: 180px;
+    height: 200px; /* Augmenté pour tes textes longs */
+    white-space: normal; /* Autorise le retour à la ligne dans la cellule */
+    line-height: 1.1;
+    text-align: left;
 }
-
 .check-cell {
     color: var(--accent); /* Croix en orange */
     font-weight: bold;
@@ -302,4 +306,5 @@ body {
     background: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
+
 
