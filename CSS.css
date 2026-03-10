@@ -1,567 +1,183 @@
- /* =========================
-
+/* =========================
     1. VARIABLES & BASE
-
 ========================= */
-
 :root {
-
     --color-dark-bg: #0d1117;
-
     --color-text-light: #ffffff;
-
     --color-text-muted: #b8c1c8;
-
-    --green-1: rgba(15, 76, 76, 0.88);
-
-    --green-2: rgba(18, 60, 60, 0.88);
-
-    --green-sisr: #2ecc71;
-
-    --accent: #f39c12; /* Orange SLAM */
-
+    --accent: #f39c12; /* Orange Global */
+    --green-sisr: #2ecc71; /* Vert Statut */
     --border-radius: 22px;
-
 }
-
-
 
 * { 
-
     margin: 0; 
-
     padding: 0; 
-
     box-sizing: border-box; 
-
 }
-
-
 
 body {
-
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-
     color: var(--color-text-light);
-
     display: flex;
-
     min-height: 100vh;
-
     background: var(--color-dark-bg) url("images/background.png") no-repeat center right / cover fixed;
-
 }
-
-
 
 /* =========================
-
-    2. SIDEBAR & NAVIGATION
-
+    2. SIDEBAR
 ========================= */
-
 .sidebar {
-
     width: 180px;
-
     min-width: 180px;
-
     background: linear-gradient(180deg, #040810, #070e1a, #040810);
-
     position: sticky;
-
     top: 0;
-
     height: 100vh;
-
     display: flex;
-
     flex-direction: column;
-
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
-
     z-index: 1000;
-
 }
 
-
-
-.sidebar ul { list-style: none !important; padding: 0 !important; }
-
-.sidebar li { padding: 0 !important; margin: 0 !important; position: static !important; }
-
-.sidebar li::before { content: none !important; }
-
-
+.sidebar nav ul { list-style: none !important; padding-top: 20px !important; }
 
 .sidebar nav ul li a {
-
     display: block;
-
     padding: 12px 22px;
-
     color: rgba(255, 255, 255, 0.85);
-
-    text-decoration: none;
-
+    text-decoration: none !important;
     font-weight: 500;
-
     transition: 0.25s;
-
 }
-
-
 
 .sidebar nav ul li a:hover { 
-
     color: var(--accent); 
-
     background: rgba(255, 255, 255, 0.05);
-
 }
-
-
-
-/* =========================
-
-    3. FOOTER SIDEBAR & NÉON
-
-========================= */
 
 .sidebar-footer {
-
     margin-top: auto; 
-
     padding: 20px 15px;
-
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
 }
 
-
-
+/* STATUT DISPONIBLE */
 .status-badge {
-
-    background: rgba(46, 204, 113, 0.05);
-
-    border: 1px solid #2ecc71;
-
+    border: 1px solid var(--green-sisr);
     border-radius: 12px;
-
     padding: 12px 10px;
-
     text-align: center;
-
     width: 100%;
-
     margin-bottom: 15px;
-
-    box-shadow: 0 0 10px rgba(46, 204, 113, 0.2);
-
-    transition: 0.3s ease;
-
+    background: rgba(46, 204, 113, 0.05);
 }
-
-
-
-.status-badge:hover {
-
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.4);
-
-    transform: translateY(-2px);
-
-}
-
-
 
 .status-dot {
-
-    width: 8px;
-
-    height: 8px;
-
-    background: #2ecc71;
-
+    width: 8px; height: 8px;
+    background: var(--green-sisr);
     border-radius: 50%;
-
     display: inline-block;
-
     margin-right: 5px;
-
-    box-shadow: 0 0 8px #2ecc71, 0 0 15px #2ecc71;
-
+    box-shadow: 0 0 8px var(--green-sisr);
 }
 
-
-
-.status-badge span {
-
-    color: #ffffff !important;
-
+.status-text {
+    color: var(--green-sisr) !important;
     font-size: 0.75em;
-
     font-weight: 700;
-
     text-transform: uppercase;
-
 }
 
-
-
-.social-links {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 20px;
-
-    margin-bottom: 15px;
-
-}
-
-
+.status-sub { font-size: 0.8em; color: var(--color-text-muted); margin-top: 5px; }
 
 .social-links a {
-
-    color: var(--color-text-muted);
-
+    color: var(--color-text-muted) !important;
+    text-decoration: none !important;
     font-size: 1.2em;
-
-    text-decoration: none;
-
-    transition: 0.3s;
-
+    margin: 0 10px;
 }
 
-
-
-.social-links a:hover { color: var(--accent); }
-
-
+.social-links a:hover { color: var(--accent) !important; }
 
 /* =========================
-
-    4. CONTENU & GLASSMORPHISM + ZOOM
-
+    3. CONTENU & STAGES
 ========================= */
-
 .content { 
-
     flex: 1; 
-
     padding: 40px; 
-
     max-width: 1100px; 
-
 }
-
-
-
-.content-header, .accueil-header, .bubble-card, .stage-card, 
-
-.article-card, .list-section, .section-apropos, .summary-card {
-
-    background: rgba(255, 255, 255, 0.05);
-
-    backdrop-filter: blur(20px) saturate(150%);
-
-    -webkit-backdrop-filter: blur(20px) saturate(150%);
-
-    border-radius: var(--border-radius);
-
-    border: 1px solid rgba(255, 255, 255, 0.12);
-
-    padding: 32px;
-
-    margin-bottom: 24px;
-
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-
-    
-
-    /* ANIMATION ZOOM FLUIDE */
-
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-
-                box-shadow 0.4s ease, 
-
-                background 0.4s ease;
-
-}
-
-
-
-/* EFFET AU SURVOL */
-
-.content-header:hover, .accueil-header:hover, .bubble-card:hover, .stage-card:hover, 
-
-.article-card:hover, .list-section:hover, .section-apropos:hover, .summary-card:hover {
-
-    transform: scale(1.02); 
-
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-
-    background: rgba(255, 255, 255, 0.08);
-
-    border: 1px solid rgba(255, 255, 255, 0.25);
-
-}
-
-
 
 .content-header {
-
-    background: linear-gradient(135deg, var(--green-1), var(--green-2));
-
+    background: linear-gradient(135deg, rgba(15, 76, 76, 0.8), rgba(18, 60, 60, 0.8));
+    padding: 32px;
+    border-radius: var(--border-radius);
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-
-/* =========================
-
-    5. SYSTÈME DES POINTS (SISR/SLAM)
-
-========================= */
-
-.content ul { list-style: none; }
-
-
-
-.content li {
-
+.stage-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 32px;
+    margin-bottom: 24px;
     position: relative;
+    transition: 0.4s ease;
+}
 
+.stage-card:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* LES POINTS ORANGE */
+.content ul { list-style: none; }
+.content li {
+    position: relative;
     padding-left: 25px;
-
     margin-bottom: 12px;
-
-    line-height: 1.6;
-
     color: var(--color-text-muted);
-
 }
-
-
-
 .content li::before {
-
     content: "•";
-
     position: absolute;
-
     left: 0;
-
-    font-size: 1.3em;
-
-    color: var(--accent); /* Orange par défaut */
-
+    color: var(--accent);
+    font-size: 1.5em;
+    line-height: 1;
 }
 
+/* LES LIENS (PLUS DE BLEU !) */
+.card-links { margin-top: 20px; display: flex; gap: 20px; }
 
-
-/* Vert SISR (Priorité maximale) */
-
-.sisr-puces li::before,
-
-.card-details.sisr-puces li::before,
-
-.list-section h3[style*="color: #2ecc71"] + .card-details li::before {
-
-    color: var(--green-sisr) !important;
-
-}
-
-
-
-/* =========================
-
-    6. BOUTONS & LIENS (FIX DÉFINITIF)
-
-========================= */
-
-
-
-/* Le bouton spécifique avec son dégradé */
-
-.download-btn {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    background: linear-gradient(to right, #ff4e50, #f9d423);
-
-    padding: 12px 25px;
-
-    border-radius: 12px;
-
-    font-weight: bold;
-
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-
-    transition: 0.3s ease;
-
-    
-
-    /* ON FORCE LE BLANC ICI */
-
-    color: #ffffff !important; 
-
+.web-link {
+    color: var(--accent) !important;
     text-decoration: none !important;
-
-}
-
-
-
-.download-btn:hover {
-
-    transform: translateY(-3px);
-
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-
-    filter: brightness(1.1);
-
-    color: #ffffff !important;
-
-}
-
-
-
-/* On s'assure que les autres éléments badges/durée restent blancs aussi */
-
-.card-duration, 
-
-.status-badge span {
-
-    color: #ffffff !important;
-
-}
-
-
-
-/* Les liens normaux dans le texte restent en jaune */
-
-.content a:not(.sidebar a):not(.download-btn) {
-
-    color: #f1c40f !important;
-
     font-weight: 600;
-
-}
-
-
-
-/* =========================
-
-    7. GRID ACCUEIL
-
-========================= */
-
-.summary-cards { 
-
-    display: flex; 
-
-    gap: 20px; 
-
-}
-
-
-
-.summary-card { 
-
-    flex: 1; 
-
-    margin-bottom: 0; 
-
-}
-
-
-
-/* =========================
-
-    STYLE DU TABLEAU SYNTHÈSE
-
-========================= */
-
-.custom-table {
-
-    width: 100%;
-
-    border-collapse: collapse;
-
-    margin-top: 10px;
-
-    color: var(--color-text-light);
-
-}
-
-
-
-.custom-table th {
-
-    background: rgba(255, 255, 255, 0.1);
-
-    color: var(--accent); /* Orange pour les titres */
-
-    padding: 15px;
-
-    text-align: left;
-
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-
-    text-transform: uppercase;
-
     font-size: 0.9em;
-
-    letter-spacing: 1px;
-
+    transition: 0.3s;
 }
 
+.web-link:hover { color: #ffffff !important; }
 
-
-.custom-table td {
-
-    padding: 15px;
-
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-
-    font-size: 0.95em;
-
-    line-height: 1.4;
-
+/* DURÉE EN HAUT À DROITE */
+.card-duration {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: rgba(243, 156, 18, 0.1);
+    border: 1px solid var(--accent);
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: var(--accent) !important;
+    font-size: 0.85em;
+    font-weight: bold;
 }
 
-
-
-/* Effet de surbrillance sur les lignes */
-
-.custom-table tbody tr {
-
-    transition: background 0.3s ease;
-
-}
-
-
-
-.custom-table tbody tr:hover {
-
-    background: rgba(255, 255, 255, 0.03);
-
-}
-
-
-
-.custom-table strong {
-
-    color: #ffffff;
-
-}
+.copyright { font-size: 0.7em; color: rgba(255,255,255,0.3); margin-top: 20px; }
