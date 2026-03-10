@@ -80,11 +80,10 @@ body {
 }
 
 /* =========================
-    4. GLASSMORPHISM (Standard pour tout)
+    4. GLASSMORPHISM (Contenu)
 ========================= */
 .content { flex: 1; padding: 40px; max-width: 1100px; }
 
-/* Classe unique pour tous les blocs de contenu */
 .content-header, .bubble-card, .summary-card, .stage-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px) saturate(180%);
@@ -106,14 +105,26 @@ h1 { font-size: 2.2em; margin-bottom: 10px; }
 h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
 
 /* =========================
-    5. LISTES & PUCES
+    5. LISTES, PUCES & LIENS
 ========================= */
 .content ul { list-style: none; }
 .content li { position: relative; padding-left: 25px; margin-bottom: 12px; color: var(--color-text-muted); }
 .content li::before {
-    content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold;
+    content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; font-size: 1.3em;
 }
 .sisr-puces li::before { color: var(--neon-green) !important; }
+
+/* Liens : Orange, sans soulignement, blanc au survol */
+.content a {
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.content a:hover {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
 
 /* =========================
     6. CARTES STAGES
@@ -129,5 +140,8 @@ h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
     font-weight: 600;
 }
 
-.web-link { color: var(--accent) !important; text-decoration: none; font-weight: 600; }
-.web-link:hover { text-decoration: underline; }
+/* =========================
+    7. GRID
+========================= */
+.summary-cards { display: flex; gap: 20px; }
+.summary-card { flex: 1; }
