@@ -208,13 +208,13 @@ h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
     color: var(--accent) !important; /* Devient orange au survol */
 }
 
-/* --- Bouton CV (Style bouton, pas lien) --- */
+/* --- Bouton CV (Style bouton) --- */
 .cv-button {
     display: inline-flex;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 10px 20px;
+    background: rgba(243, 156, 18, 0.15); /* Fond orangé léger */
+    border: 1px solid var(--accent);
+    padding: 12px 20px;
     border-radius: 12px;
     color: var(--accent) !important;
     text-decoration: none !important;
@@ -225,6 +225,19 @@ h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
 .cv-button:hover {
     background: var(--accent);
     color: #ffffff !important;
+}
+
+/* --- Liens sociaux footer (Blanc, petits, non soulignés) --- */
+.social-links a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 0.85em; /* Plus petit */
+    margin: 0 8px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent) !important;
 }
 
 
