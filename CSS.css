@@ -36,7 +36,10 @@ body {
     z-index: 1000;
 }
 
-.sidebar nav ul { list-style: none; padding-top: 20px; }
+.sidebar nav ul { 
+    list-style: none; 
+    padding-top: 20px; 
+}
 
 .sidebar nav ul li a {
     display: block;
@@ -47,11 +50,57 @@ body {
     transition: 0.25s;
 }
 
-.sidebar nav ul li a:hover, .sidebar nav ul li a.active { 
+.sidebar nav ul li a:hover, 
+.sidebar nav ul li a.active { 
     color: var(--accent); 
     background: rgba(255, 255, 255, 0.05);
 }
 
+/* =========================
+    SIDEBAR FOOTER & STATUS
+========================= */
+.sidebar-footer {
+    margin-top: auto; 
+    padding: 20px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.status-badge {
+    border: 1px solid var(--neon-green);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 15px;
+    background: rgba(46, 204, 113, 0.05);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--neon-green);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.social-links { 
+    display: flex; 
+    gap: 15px; 
+    margin-bottom: 10px; 
+}
+
+.social-links a {
+    color: #ffffff !important; /* Blanc comme demandé */
+    text-decoration: none !important;
+    font-size: 0.9em; /* Plus petit */
+    transition: 0.3s;
+}
+
+.social-links a:hover { color: var(--accent); }
 /* =========================
     3. FOOTER SIDEBAR
 ========================= */
@@ -177,4 +226,5 @@ h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
     background: var(--accent);
     color: #ffffff !important;
 }
+
 
