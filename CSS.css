@@ -145,3 +145,36 @@ h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
 ========================= */
 .summary-cards { display: flex; gap: 20px; }
 .summary-card { flex: 1; }
+
+/* --- Liens réseaux sociaux (Footer) --- */
+.social-links a {
+    color: #ffffff !important;      /* Blanc */
+    text-decoration: none !important; /* Pas de soulignement */
+    font-size: 0.9em;                /* Plus petit */
+    margin: 0 5px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--accent) !important; /* Devient orange au survol */
+}
+
+/* --- Bouton CV (Style bouton, pas lien) --- */
+.cv-button {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: var(--accent) !important;
+    text-decoration: none !important;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.cv-button:hover {
+    background: var(--accent);
+    color: #ffffff !important;
+}
+
