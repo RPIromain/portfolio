@@ -5,8 +5,15 @@
     --color-dark-bg: #0d1117;
     --color-text-light: #ffffff;
     --color-text-muted: #b8c1c8;
-    --accent: #f39c12; /* Orange Global */
-    --green-sisr: #2ecc71; /* Vert Statut */
+    
+    /* Harmonisation ORANGE / OR */
+    --accent: #f39c12; 
+    --accent-glow: rgba(243, 156, 18, 0.3);
+    
+    /* COULEUR SISR / DISPONIBILITÉ */
+    --neon-green: #2ecc71;
+    --neon-green-glow: rgba(46, 204, 113, 0.4);
+    
     --border-radius: 22px;
 }
 
@@ -21,11 +28,12 @@ body {
     color: var(--color-text-light);
     display: flex;
     min-height: 100vh;
+    /* Image de fond fixe */
     background: var(--color-dark-bg) url("images/background.png") no-repeat center right / cover fixed;
 }
 
 /* =========================
-    2. SIDEBAR
+    2. SIDEBAR & NAVIGATION
 ========================= */
 .sidebar {
     width: 180px;
@@ -40,22 +48,29 @@ body {
     z-index: 1000;
 }
 
-.sidebar nav ul { list-style: none !important; padding-top: 20px !important; }
+.sidebar nav ul {
+    list-style: none;
+    padding-top: 20px;
+}
 
 .sidebar nav ul li a {
     display: block;
     padding: 12px 22px;
     color: rgba(255, 255, 255, 0.85);
-    text-decoration: none !important;
+    text-decoration: none;
     font-weight: 500;
     transition: 0.25s;
 }
 
-.sidebar nav ul li a:hover { 
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active { 
     color: var(--accent); 
     background: rgba(255, 255, 255, 0.05);
 }
 
+/* =========================
+    3. FOOTER SIDEBAR & STATUT
+========================= */
 .sidebar-footer {
     margin-top: auto; 
     padding: 20px 15px;
@@ -65,46 +80,51 @@ body {
     align-items: center;
 }
 
-/* STATUT DISPONIBLE */
 .status-badge {
-    border: 1px solid var(--green-sisr);
+    background: rgba(46, 204, 113, 0.05);
+    border: 1px solid var(--neon-green);
     border-radius: 12px;
-    padding: 12px 10px;
+    padding: 10px;
     text-align: center;
     width: 100%;
     margin-bottom: 15px;
-    background: rgba(46, 204, 113, 0.05);
+    box-shadow: 0 0 10px rgba(46, 204, 113, 0.2);
 }
 
 .status-dot {
-    width: 8px; height: 8px;
-    background: var(--green-sisr);
+    width: 8px;
+    height: 8px;
+    background: var(--neon-green);
     border-radius: 50%;
     display: inline-block;
     margin-right: 5px;
-    box-shadow: 0 0 8px var(--green-sisr);
+    box-shadow: 0 0 8px var(--neon-green);
 }
 
-.status-text {
-    color: var(--green-sisr) !important;
+.status-badge span {
+    color: #ffffff !important;
     font-size: 0.75em;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-.status-sub { font-size: 0.8em; color: var(--color-text-muted); margin-top: 5px; }
-
-.social-links a {
-    color: var(--color-text-muted) !important;
-    text-decoration: none !important;
-    font-size: 1.2em;
-    margin: 0 10px;
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
 }
 
-.social-links a:hover { color: var(--accent) !important; }
+.social-links a {
+    color: var(--color-text-muted);
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover { color: var(--accent); }
 
 /* =========================
-    3. CONTENU & STAGES
+    4. CONTENU & EFFET GLASSMORPHISM
 ========================= */
 .content { 
     flex: 1; 
@@ -112,72 +132,83 @@ body {
     max-width: 1100px; 
 }
 
-.content-header {
-    background: linear-gradient(135deg, rgba(15, 76, 76, 0.8), rgba(18, 60, 60, 0.8));
-    padding: 32px;
-    border-radius: var(--border-radius);
-    margin-bottom: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.stage-card {
+/* Application de l'effet de verre sur toutes les cartes */
+.content-header, .bubble-card, .summary-card, .list-section {
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-radius: var(--border-radius);
     border: 1px solid rgba(255, 255, 255, 0.12);
     padding: 32px;
     margin-bottom: 24px;
-    position: relative;
-    transition: 0.4s ease;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
-.stage-card:hover {
-    transform: scale(1.02);
-    background: rgba(255, 255, 255, 0.08);
+h1 { font-size: 2.2em; margin-bottom: 10px; }
+h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
+h3 { font-size: 1.1em; margin-bottom: 10px; }
+
+.content-header p, .article-meta {
+    color: var(--color-text-muted);
+    font-size: 1em;
 }
 
-/* LES POINTS ORANGE */
-.content ul { list-style: none; }
+/* =========================
+    5. SYSTÈME DES POINTS (Puces)
+========================= */
+.content ul {
+    list-style: none; /* On retire les puces par défaut */
+}
+
 .content li {
     position: relative;
-    padding-left: 25px;
+    padding-left: 25px; /* Espace pour la nouvelle puce */
     margin-bottom: 12px;
+    line-height: 1.6;
     color: var(--color-text-muted);
 }
+
+/* Puce Orange par défaut */
 .content li::before {
-    content: "•";
+    content: "•"; /* Caractère puce */
     position: absolute;
     left: 0;
     color: var(--accent);
-    font-size: 1.5em;
-    line-height: 1;
-}
-
-/* LES LIENS (PLUS DE BLEU !) */
-.card-links { margin-top: 20px; display: flex; gap: 20px; }
-
-.web-link {
-    color: var(--accent) !important;
-    text-decoration: none !important;
-    font-weight: 600;
-    font-size: 0.9em;
-    transition: 0.3s;
-}
-
-.web-link:hover { color: #ffffff !important; }
-
-/* DURÉE EN HAUT À DROITE */
-.card-duration {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    background: rgba(243, 156, 18, 0.1);
-    border: 1px solid var(--accent);
-    padding: 5px 15px;
-    border-radius: 10px;
-    color: var(--accent) !important;
-    font-size: 0.85em;
+    font-size: 1.3em;
     font-weight: bold;
 }
 
-.copyright { font-size: 0.7em; color: rgba(255,255,255,0.3); margin-top: 20px; }
+/* Puce Verte spécifique pour SISR */
+.sisr-puces li::before {
+    color: var(--neon-green) !important;
+}
+
+/* =========================
+    6. BOUTONS
+========================= */
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    color: #ffffff;
+}
+
+/* =========================
+    7. GRID & UTILITIES
+========================= */
+.summary-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.summary-card {
+    flex: 1;
+}
