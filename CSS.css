@@ -28,7 +28,6 @@ body {
     color: var(--color-text-light);
     display: flex;
     min-height: 100vh;
-    /* Image de fond fixe */
     background: var(--color-dark-bg) url("images/background.png") no-repeat center right / cover fixed;
 }
 
@@ -48,10 +47,7 @@ body {
     z-index: 1000;
 }
 
-.sidebar nav ul {
-    list-style: none;
-    padding-top: 20px;
-}
+.sidebar nav ul { list-style: none; padding-top: 20px; }
 
 .sidebar nav ul li a {
     display: block;
@@ -108,11 +104,7 @@ body {
     text-transform: uppercase;
 }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 10px;
-}
+.social-links { display: flex; gap: 15px; margin-bottom: 10px; }
 
 .social-links a {
     color: var(--color-text-muted);
@@ -124,16 +116,12 @@ body {
 .social-links a:hover { color: var(--accent); }
 
 /* =========================
-    4. CONTENU & EFFET GLASSMORPHISM
+    4. CONTENU & GLASSMORPHISM
 ========================= */
-.content { 
-    flex: 1; 
-    padding: 40px; 
-    max-width: 1100px; 
-}
+.content { flex: 1; padding: 40px; max-width: 1100px; }
 
-/* Application de l'effet de verre sur toutes les cartes */
-.content-header, .bubble-card, .summary-card, .list-section {
+/* Classes de cartes avec effet verre */
+.content-header, .bubble-card, .summary-card, .list-section, .stage-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -142,35 +130,36 @@ body {
     padding: 32px;
     margin-bottom: 24px;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Effet survol premium */
+.bubble-card:hover, .summary-card:hover, .list-section:hover, .stage-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
 }
 
 h1 { font-size: 2.2em; margin-bottom: 10px; }
 h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
 h3 { font-size: 1.1em; margin-bottom: 10px; }
 
-.content-header p, .article-meta {
-    color: var(--color-text-muted);
-    font-size: 1em;
-}
+.content-header p, .article-meta { color: var(--color-text-muted); font-size: 1em; }
 
 /* =========================
     5. SYSTÈME DES POINTS (Puces)
 ========================= */
-.content ul {
-    list-style: none; /* On retire les puces par défaut */
-}
+.content ul { list-style: none; }
 
 .content li {
     position: relative;
-    padding-left: 25px; /* Espace pour la nouvelle puce */
+    padding-left: 25px;
     margin-bottom: 12px;
     line-height: 1.6;
     color: var(--color-text-muted);
 }
 
-/* Puce Orange par défaut */
 .content li::before {
-    content: "•"; /* Caractère puce */
+    content: "•";
     position: absolute;
     left: 0;
     color: var(--accent);
@@ -178,37 +167,35 @@ h3 { font-size: 1.1em; margin-bottom: 10px; }
     font-weight: bold;
 }
 
-/* Puce Verte spécifique pour SISR */
-.sisr-puces li::before {
-    color: var(--neon-green) !important;
-}
+.sisr-puces li::before { color: var(--neon-green) !important; }
 
 /* =========================
-    6. BOUTONS
+    6. STAGES & BOUTONS
 ========================= */
-.download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+.stage-card { display: flex; justify-content: space-between; align-items: flex-start; }
+
+.card-duration {
+    background: rgba(243, 156, 18, 0.1);
+    border: 1px solid var(--accent);
     color: var(--accent);
+    padding: 8px 16px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.download-btn, .web-link {
+    display: inline-flex;
+    color: var(--accent) !important;
     text-decoration: none;
     font-weight: 600;
-    padding: 10px 0;
     transition: 0.3s;
 }
 
-.download-btn:hover {
-    color: #ffffff;
-}
+.download-btn:hover, .web-link:hover { color: #ffffff !important; }
 
 /* =========================
-    7. GRID & UTILITIES
+    7. GRID
 ========================= */
-.summary-cards {
-    display: flex;
-    gap: 20px;
-}
-
-.summary-card {
-    flex: 1;
-}
+.summary-cards { display: flex; gap: 20px; }
+.summary-card { flex: 1; }
