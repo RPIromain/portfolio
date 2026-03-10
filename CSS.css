@@ -5,13 +5,17 @@
     --color-dark-bg: #0d1117;
     --color-text-light: #ffffff;
     --color-text-muted: #b8c1c8;
-    --accent: #f39c12; 
-    --neon-green: #2ecc71;
+    --accent: #f39c12; /* Orange SLAM */
+    --neon-green: #2ecc71; /* Vert SISR */
     --gradient-header: linear-gradient(135deg, #4d330f 0%, #2c1e0a 100%);
     --border-radius: 22px;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -22,7 +26,7 @@ body {
 }
 
 /* =========================
-    2. SIDEBAR (CORRECTIF ALIGNEMENT)
+    2. SIDEBAR (FIX ALIGNEMENT)
 ========================= */
 .sidebar {
     width: 180px;
@@ -37,13 +41,17 @@ body {
     z-index: 1000;
 }
 
-.sidebar nav ul { list-style: none !important; padding: 20px 0 0 0 !important; }
+.sidebar nav ul { 
+    list-style: none !important; 
+    padding: 20px 0 0 0 !important; 
+}
 
 .sidebar nav ul li a {
     display: block;
     padding: 12px 22px;
     color: rgba(255, 255, 255, 0.85);
-    text-decoration: none !important; /* Retire le bleu/souligné */
+    text-decoration: none !important;
+    font-weight: 500;
     transition: 0.25s;
 }
 
@@ -52,17 +60,16 @@ body {
     background: rgba(255, 255, 255, 0.05);
 }
 
+/* Footer de Sidebar (Statut & Liens) */
 .sidebar-footer {
     margin-top: auto; 
     padding: 20px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* =========================
-    3. STATUT & LIENS SOCIAUX
-========================= */
 .status-badge {
     background: rgba(46, 204, 113, 0.05);
     border: 2px solid var(--neon-green);
@@ -82,25 +89,33 @@ body {
     box-shadow: 0 0 8px var(--neon-green);
 }
 
-.status-badge span { color: var(--neon-green) !important; font-weight: 700; font-size: 0.75em; }
+.status-badge span { 
+    color: var(--neon-green) !important; 
+    font-weight: 700; 
+    font-size: 0.75em; 
+    text-transform: uppercase;
+}
 
-.social-links { display: flex; gap: 15px; margin-bottom: 10px; }
-
-/* Correction icônes LinkedIn/Mail */
+/* Fix icônes LinkedIn/@ */
 .social-links a {
     color: var(--color-text-muted) !important;
     text-decoration: none !important;
     font-size: 1.2em;
+    margin: 0 10px;
 }
 
 .social-links a:hover { color: var(--accent) !important; }
 
 /* =========================
-    4. CONTENU & GLASSMORPHISM
+    3. CONTENU & CARTES
 ========================= */
-.content { flex: 1; padding: 40px; max-width: 1100px; }
+.content { 
+    flex: 1; 
+    padding: 40px; 
+    max-width: 1100px; 
+}
 
-.content-header, .bts-header-card, .article-card, .stage-card, .summary-card {
+.content-header, .bts-header-card, .stage-card, .summary-card, .article-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -111,64 +126,88 @@ body {
 }
 
 .content-header { background: var(--gradient-header); }
-.bts-header-card { background: rgba(255, 255, 255, 0.03) !important; }
 
 /* =========================
-    5. BLOCS SISR & SLAM (CADRES)
-========================= */
-.sisr-block {
-    border: 1px solid var(--neon-green) !important;
-    background: rgba(46, 204, 113, 0.05) !important;
-    border-radius: 15px; padding: 20px; margin-top: 15px;
-}
-
-.slam-block {
-    border: 1px solid var(--accent) !important;
-    background: rgba(243, 156, 18, 0.05) !important;
-    border-radius: 15px; padding: 20px; margin-top: 15px;
-}
-
-/* =========================
-    6. LISTES & LIENS CONTENU
+    4. FIX LIENS & LISTES (PLUS DE BLEU)
 ========================= */
 .content ul { list-style: none; }
-.content li { position: relative; padding-left: 25px; margin-bottom: 12px; }
-.content li::before {
-    content: "•"; position: absolute; left: 0;
-    color: var(--accent); font-size: 1.5em;
-}
-.sisr-block li::before { color: var(--neon-green) !important; }
 
-/* Fix liens stages (plus de bleu) */
-.content a:not(.sidebar a) {
+.content li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    color: var(--color-text-muted);
+}
+
+.content li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+/* Suppression du bleu et du soulignement */
+.content a {
     color: var(--accent) !important;
     text-decoration: none !important;
     font-weight: 600;
     transition: 0.3s;
 }
 
-.content a:hover { color: #ffffff !important; }
+.content a:hover {
+    color: #ffffff !important;
+}
+
+/* Spécifique aux liens de stages */
+.card-links {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+}
 
 /* =========================
-    7. TABLEAU DE SYNTHÈSE
+    5. OPTIONS SISR / SLAM (CADRES)
 ========================= */
-.matrix-table { 
-    width: 100%; 
-    table-layout: fixed; /* Empêche le débordement */
-    border-collapse: collapse; 
+.sisr-block {
+    border: 1px solid var(--neon-green) !important;
+    background: rgba(46, 204, 113, 0.05) !important;
+    border-radius: 15px;
+    padding: 20px;
+}
+.sisr-block li::before { color: var(--neon-green) !important; }
+
+.slam-block {
+    border: 1px solid var(--accent) !important;
+    background: rgba(243, 156, 18, 0.05) !important;
+    border-radius: 15px;
+    padding: 20px;
 }
 
-.matrix-table th, .matrix-table td { 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    padding: 12px; 
-    text-align: center; 
+/* =========================
+    6. TABLEAU DE SYNTHÈSE
+========================= */
+.matrix-table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
-.rotate-text { 
-    writing-mode: vertical-rl; 
-    transform: rotate(180deg); 
-    height: 180px; 
-    text-align: left; 
+.matrix-table th, .matrix-table td {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    text-align: center;
 }
 
-.check-cell { color: var(--accent); font-weight: bold; }
+.rotate-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    height: 180px;
+    text-align: left;
+}
+
+.check-cell { 
+    color: var(--accent); 
+    font-weight: bold; 
+}
