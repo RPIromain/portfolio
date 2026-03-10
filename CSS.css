@@ -180,6 +180,43 @@ body {
 /* =========================
     7. TABLEAUX & DIVERS
 ========================= */
+
+/* On cible TOUS les liens du site pour retirer le bleu et le soulignement */
+a {
+    text-decoration: none !important;
+    transition: 0.3s ease;
+}
+
+/* Liens dans le contenu (Stages, etc.) */
+.content a:not(.download-btn) {
+    color: var(--accent) !important; /* Force le Orange */
+    font-weight: 600;
+}
+
+/* Liens icônes LinkedIn / Mail dans la sidebar */
+.social-links a, .sidebar-footer a {
+    color: var(--color-text-muted) !important;
+    font-size: 1.2em;
+}
+
+.social-links a:hover, .sidebar-footer a:hover {
+    color: var(--accent) !important;
+    filter: drop-shadow(0 0 5px var(--accent-glow));
+}
+
+/* Hover global pour les liens du contenu */
+.content a:hover {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+/* Fix spécifique pour les liens de stages qui étaient bleus */
+.stage-card a {
+    color: var(--accent) !important;
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 0.9em;
+}
 .matrix-table {
     width: 100%;
     table-layout: fixed;
@@ -197,3 +234,4 @@ body {
     text-align: left;
 }
 .check-cell { color: var(--accent); font-weight: bold; }
+
