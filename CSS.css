@@ -5,24 +5,13 @@
     --color-dark-bg: #0d1117;
     --color-text-light: #ffffff;
     --color-text-muted: #b8c1c8;
-    
-    /* Harmonisation ORANGE / OR */
-    --accent: #f39c12; 
-    --accent-glow: rgba(243, 156, 18, 0.3);
-    
-    /* COULEUR SISR / DISPONIBILITÉ */
-    --neon-green: #2ecc71;
-    --neon-green-glow: rgba(46, 204, 113, 0.4);
-    
+    --accent: #f39c12; /* Ton Orange/Or */
+    --neon-green: #2ecc71; /* Ton Vert SISR */
     --gradient-header: linear-gradient(135deg, #4d330f 0%, #2c1e0a 100%);
     --border-radius: 22px;
 }
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -33,7 +22,7 @@ body {
 }
 
 /* =========================
-    2. SIDEBAR & NAVIGATION
+    2. SIDEBAR
 ========================= */
 .sidebar {
     width: 180px;
@@ -48,12 +37,12 @@ body {
     z-index: 1000;
 }
 
+.sidebar nav ul { list-style: none; }
 .sidebar nav ul li a {
     display: block;
     padding: 12px 22px;
     color: rgba(255, 255, 255, 0.85);
     text-decoration: none;
-    font-weight: 500;
     transition: 0.25s;
 }
 
@@ -62,57 +51,33 @@ body {
     background: rgba(255, 255, 255, 0.05);
 }
 
-/* =========================
-    3. FOOTER SIDEBAR & STATUT
-========================= */
-.sidebar-footer {
-    margin-top: auto; 
-    padding: 20px 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* Badge de statut en bas de sidebar */
 .status-badge {
-    background: rgba(46, 204, 113, 0.05);
+    margin: auto 15px 20px;
+    padding: 12px;
     border: 2px solid var(--neon-green);
     border-radius: 12px;
-    padding: 12px 10px;
     text-align: center;
-    width: 100%;
-    margin-bottom: 15px;
-    box-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+    background: rgba(46, 204, 113, 0.05);
 }
 
 .status-dot {
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: var(--neon-green);
     border-radius: 50%;
     display: inline-block;
-    margin-right: 8px;
+    margin-right: 5px;
     box-shadow: 0 0 8px var(--neon-green);
 }
 
-.status-badge span {
-    color: var(--neon-green) !important;
-    font-size: 0.75em;
-    font-weight: 800;
-}
-
 /* =========================
-    4. CONTENU & GLASSMORPHISM
+    3. CONTENU & GLASSMORPHISM
 ========================= */
-.content { 
-    flex: 1; 
-    padding: 40px; 
-    max-width: 1100px; 
-}
+.content { flex: 1; padding: 40px; max-width: 1100px; }
 
-/* Base commune pour toutes les cartes */
-.content-header, .bts-header-card, .accueil-header, .bubble-card, .stage-card, 
-.article-card, .list-section, .section-apropos, .summary-card {
+/* L'effet de vitre dépolie sur toutes les cartes */
+.content-header, .bts-header-card, .article-card, .summary-card, .stage-card {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px) saturate(150%);
     -webkit-backdrop-filter: blur(20px) saturate(150%);
@@ -123,23 +88,20 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
+/* Le bandeau Marron/Orange par défaut */
 .content-header { background: var(--gradient-header); }
 
-/* Header BTS SIO : On retire le marron comme demandé */
-.bts-header-card { 
-    background: rgba(255, 255, 255, 0.03) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
+/* Le bandeau BTS SIO sobre (sans marron) */
+.bts-header-card { background: rgba(255, 255, 255, 0.03) !important; }
 
 /* =========================
-    5. SYSTÈME DES POINTS
+    4. SYSTÈME DES POINTS (ORANGE ET VERT)
 ========================= */
 .content ul { list-style: none; }
 .content li {
     position: relative;
     padding-left: 25px;
     margin-bottom: 12px;
-    line-height: 1.6;
     color: var(--color-text-muted);
 }
 
@@ -148,26 +110,24 @@ body {
     content: "•";
     position: absolute;
     left: 0;
-    font-size: 1.3em;
-    color: var(--accent) !important;
+    color: var(--accent);
+    font-size: 1.5em;
+    line-height: 1;
 }
 
-/* Points Verts spécifiques pour SISR */
-.green-puces-list li::before {
-    color: var(--neon-green) !important;
-}
+/* Points Verts UNIQUEMENT dans le bloc SISR */
+.sisr-block li::before { color: var(--neon-green) !important; }
 
 /* =========================
-    6. BLOCS SISR & SLAM (ENCADRÉS)
+    5. LES ENCADRÉS (SISR & SLAM)
 ========================= */
 
 /* Bloc SISR : Cadre Vert */
 .sisr-block {
     border: 1px solid var(--neon-green) !important;
     background: rgba(46, 204, 113, 0.05) !important;
-    backdrop-filter: blur(10px);
-    border-radius: var(--border-radius);
-    padding: 25px;
+    border-radius: 15px;
+    padding: 20px;
     margin-top: 15px;
 }
 
@@ -175,33 +135,26 @@ body {
 .slam-block {
     border: 1px solid var(--accent) !important;
     background: rgba(243, 156, 18, 0.05) !important;
-    backdrop-filter: blur(10px);
-    border-radius: var(--border-radius);
-    padding: 25px;
+    border-radius: 15px;
+    padding: 20px;
     margin-top: 15px;
 }
 
 /* =========================
-    7. TABLEAU DE SYNTHÈSE
+    6. TABLEAU DE SYNTHÈSE (FIX)
 ========================= */
 .matrix-table {
     width: 100%;
-    table-layout: fixed; /* Empêche le débordement */
+    table-layout: fixed;
     border-collapse: collapse;
 }
-
 .matrix-table th, .matrix-table td {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 8px;
-    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px;
 }
-
 .rotate-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    height: 200px;
-    white-space: normal;
+    height: 180px;
     text-align: left;
 }
-
-
