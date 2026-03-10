@@ -9,102 +9,82 @@
 <body>
 
     <aside class="sidebar">
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="BTS-SIO.html">BTS SIO</a></li>
-            <li><a href="Mon-Profil.html">Mon Profil</a></li>
-            <li><a href="Mes-Stages.html">Mes Stages</a></li>
-            <li><a href="Veille-Technologique.html">Veille Technologique</a></li>
-            <li><a href="tableau-synthese.html">Tableau de synthèse</a></li>
-
-        </ul>
-    </nav>
-
-    <div class="sidebar-footer">
-        
-        <div class="status-badge">
-            <div class="status-dot"></div>
-            <span style="font-size: 0.75em; color: #2ecc71; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Disponible</span>
-            <p style="font-size: 0.8em; margin-top: 5px; color: var(--color-text-muted);">Alternance 2026/2027</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="BTS-SIO.html">BTS SIO</a></li>
+                <li><a href="Mon-Profil.html" class="active">Mon Profil</a></li>
+                <li><a href="Mes-Stages.html">Mes Stages</a></li>
+                <li><a href="Veille-Technologique.html">Veille Technologique</a></li>
+                <li><a href="tableau-synthese.html">Tableau de synthèse</a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="status-badge">
+                <div class="status-dot"></div>
+                <span>Disponible</span>
+                <p class="status-sub">Alternance 2026/2027</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/romain-piccoli-78abb134a" target="_blank">in</a>
+                <a href="mailto:romainpiccoli0@gmail.com">@</a>
+            </div>
+            <p class="copyright">© 2026 Romain P.</p>
         </div>
-
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/romain-piccoli-78abb134a" target="_blank" title="LinkedIn">in</a>
-            <a href="mailto:romainpiccoli0@gmail.com" title="Contact">@</a>
-        </div>
-
-        <p style="font-size: 0.7em; color: rgba(255,255,255,0.3); text-align: center; margin-top: 20px;">
-            © 2026 Romain P.
-        </p>
-    </div>
-</aside>
-
+    </aside>
 
     <main class="content">
-
         <header class="content-header">
             <h1>Romain Piccoli</h1>
-            <p>Etudiant BTS SIO option SISR</p>
+            <p>Étudiant BTS SIO option SISR</p>
             <div style="margin-top: 20px; line-height: 1.8;">
-                <p><span style="color: var(--accent);">Téléphone:</span> 06 56 77 48 98</p>
-                <p><span style="color: var(--accent);">Email:</span> romainpiccoli0@gmail.com</p>
-                <p><span style="color: var(--accent);">Adresse:</span> 3 rue Chantemerle, 01000 Bourg-en-Bresse</p>
-                <p><span style="color: var(--accent);">Formation:</span> Lycée Carriat - 2e année BTS SIO SISR</p>
+                <p><span style="color: var(--accent);">Téléphone :</span> 06 56 77 48 98</p>
+                <p><span style="color: var(--accent);">Email :</span> romainpiccoli0@gmail.com</p>
+                <p><span style="color: var(--accent);">Adresse :</span> 3 rue Chantemerle, 01000 Bourg-en-Bresse</p>
             </div>
         </header>
 
-        <section class="article-card">
+        <section class="bubble-card">
             <h2>Formations</h2>
             <div style="margin-top: 15px;">
                 <div style="margin-bottom: 20px;">
-                    <h3 style="color: var(--accent); font-size: 1.1em; margin-bottom: 5px;">BTS SIO SISR</h3>
+                    <h3 style="color: var(--accent);">BTS SIO SISR</h3>
                     <p>Lycée Carriat</p>
-                    <p style="font-size: 0.85em; opacity: 0.7;">2024 - 2026</p>
+                    <p class="article-meta">2024 - 2026</p>
                 </div>
                 <div>
-                    <h3 style="color: var(--accent); font-size: 1.1em; margin-bottom: 5px;">BAC PRO SN option C</h3>
+                    <h3 style="color: var(--accent);">BAC PRO SN option C</h3>
                     <p>Lycée Arbez Carme</p>
-                    <p style="font-size: 0.85em; opacity: 0.7;">2021 - 2024</p>
+                    <p class="article-meta">2021 - 2024</p>
                 </div>
             </div>
         </section>
 
-        <section class="article-card">
+        <section class="bubble-card">
             <h2>Télécharger mon CV</h2>
-            <div style="margin-top: 20px;">
-                <a href="images/Romain.piccoli.CV.pdf" download class="download-btn">
-    📄 Télécharger le PDF
-</a>
-            </div>
+            <a href="images/Romain.piccoli.CV.pdf" download class="download-btn">
+                📄 Télécharger le PDF
+            </a>
         </section>
 
         <section class="list-section">
-            <h3>Mes compétences</h3>
-            <div class="card-details">
-                <ul>
-                    <li>Virtualisation : VMware / Proxmox / VirtualBox</li>
-                    <li>Windows Server (2016 à 2025) & Linux (Debian 12/13)</li>
-                    <li>Réseau : ADDS / DHCP / DNS / GPO / MDT / WDS / WSUS</li>
-                    <li>Cybersécurité : Kali Linux</li>
-                </ul>
-            </div>
+            <h2>Mes compétences</h2>
+            <ul>
+                <li>Virtualisation : VMware / Proxmox / VirtualBox</li>
+                <li>Windows Server (2016 à 2025) & Linux (Debian 12/13)</li>
+                <li>Réseau : ADDS / DHCP / DNS / GPO / MDT / WDS / WSUS</li>
+                <li>Cybersécurité : Kali Linux</li>
+            </ul>
         </section>
 
         <section class="list-section">
-            <h3>Divers</h3>
-            <div class="card-details">
-                <ul>
-                    <li>Jeune sapeur pompier du haut-bugey (4 ans)</li>
-                    <li>Cinéma</li>
-                    <li>Jeux vidéos</li>
-                </ul>
-            </div>
+            <h2>Divers</h2>
+            <ul>
+                <li>Jeune sapeur-pompier du Haut-Bugey (4 ans)</li>
+                <li>Cinéma</li>
+                <li>Jeux vidéo</li>
+            </ul>
         </section>
-
     </main>
 </body>
-
 </html>
-
-
