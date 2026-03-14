@@ -210,6 +210,7 @@ h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
 
 /* --- Bouton CV (Style bouton) --- */
 .cv-button {
+    cursor: pointer;
     display: inline-flex;
     align-items: center;
     background: rgba(243, 156, 18, 0.15); /* Fond orangé léger */
