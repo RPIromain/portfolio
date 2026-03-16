@@ -229,16 +229,16 @@ h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
 }
 
 /* --- Liens sociaux footer (Blanc, petits, non soulignés) --- */
-.social-links a {
-    color: #ffffff !important;
-    text-decoration: none !important;
-    font-size: 0.85em; /* Plus petit */
-    margin: 0 8px;
+.web-link {
+    color: var(--accent);
+    text-decoration: none; /* supprime le soulignement */
+    font-weight: 600;
     transition: 0.3s;
 }
 
-.social-links a:hover {
-    color: var(--accent) !important;
+.web-link:hover {
+    color: #ffffff;
+    text-decoration: none; /* reste sans soulignement */
 }
 
 
