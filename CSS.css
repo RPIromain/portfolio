@@ -17,7 +17,7 @@ body {
     color: var(--color-text-light);
     display: flex;
     min-height: 100vh;
-    background: var(--color-dark-bg) url("images/background.png") no-repeat center right / cover fixed;
+    background: var(--color-dark-bg) url("images/Background2.jpeg") no-repeat center right / cover fixed;
 }
 
 /* =========================
