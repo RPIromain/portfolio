@@ -232,6 +232,10 @@ h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
 .web-link {
     color: var(--accent) !important;
     text-decoration: none !important;
+    /* Supprime les "faux" soulignements */
+    border-bottom: none !important; 
+    box-shadow: none !important;
+    
     font-weight: 600;
     transition: 0.3s;
 }
@@ -239,6 +243,8 @@ h2 { font-size: 1.5em; margin-bottom: 15px; color: #ffffff; }
 .web-link:hover {
     color: #ffffff !important;
     text-decoration: none !important;
+    /* On s'assure que ça ne revient pas au survol */
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
-
 
