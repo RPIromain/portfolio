@@ -6,23 +6,23 @@
     <title>Tableau de Synthèse E5 - Romain Piccoli</title>
     <link rel="stylesheet" href="CSS.css">
     <style>
+        /* Optimisations spécifiques pour le tableau de synthèse */
         .table-container {
-            overflow-x: auto;
-            margin-top: 20px;
+            overflow-x: auto; /* Scroll horizontal sur mobile */
+            margin-top: 10px;
             border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.2);
         }
 
         .matrix-table {
             width: 100%;
             border-collapse: collapse;
             color: white;
-            font-size: 0.8em;
-            background: rgba(15, 15, 15, 0.5);
+            font-size: 0.85em;
         }
 
         .matrix-table th, .matrix-table td {
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             padding: 12px 8px;
             text-align: center;
         }
@@ -35,46 +35,52 @@
             letter-spacing: 0.5px;
         }
 
+        /* Texte vertical pour les compétences */
         .rotate-text {
             writing-mode: vertical-rl;
             transform: rotate(180deg);
             white-space: normal;
-            line-height: 1.2;
-            height: 220px;
+            line-height: 1.1;
+            height: 190px;
             text-align: left;
             padding: 10px 5px;
+            font-size: 0.9em;
         }
 
+        /* En-têtes de catégories (Formation / Stages) */
         .category-header {
-            background: rgba(243, 156, 18, 0.05);
+            background: rgba(243, 156, 18, 0.1) !important;
             font-weight: bold;
             text-align: left !important;
             color: var(--accent);
             text-transform: uppercase;
+            letter-spacing: 1px;
             padding: 15px !important;
         }
 
+        /* Style des "X" de validation */
         .check-cell {
-            color: var(--accent); 
+            color: var(--neon-green);
             font-weight: 900;
-            font-size: 1.4em;
+            font-size: 1.3em;
         }
 
-        .real-link {
-            color: #ffffff;
-            text-decoration: none;
+        /* Colonne de gauche (intitulés) */
+        .mission-name {
+            text-align: left !important;
             font-weight: 500;
-            transition: 0.3s;
+            padding-left: 15px !important;
         }
 
-        .real-link:hover {
-            color: var(--accent);
+        .period-cell {
+            color: var(--color-text-muted);
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
 
-    <aside class="sidebar">
+<aside class="sidebar">
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
@@ -82,13 +88,11 @@
             <li><a href="Mon-Profil.html">Mon Profil</a></li>
             <li><a href="Mes-Stages.html">Mes Stages</a></li>
             <li><a href="Veille-Technologique.html">Veille Technologique</a></li>
-            <li><a href="tableau-synthese.html">Tableau de synthèse</a></li>
-
+            <li><a href="tableau-synthese.html" class="active">Tableau de synthèse</a></li>
         </ul>
     </nav>
 
     <div class="sidebar-footer">
-        
         <div class="status-badge">
             <div class="status-dot"></div>
             <span style="font-size: 0.75em; color: #2ecc71; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Disponible</span>
@@ -105,17 +109,19 @@
         </p>
     </div>
 </aside>
-    <main class="content">
-        <header class="content-header">
-            <h1>Tableau de synthèse</h1>
-            <p>Récapitulatif des réalisations professionnelles - Session 2026</p>
-        </header>
 
+<main class="content">
+    <header class="content-header">
+        <h1>Tableau de synthèse</h1>
+        <p>Récapitulatif des réalisations professionnelles - Session 2026</p>
+    </header>
+
+    <section class="bubble-card">
         <div class="table-container">
             <table class="matrix-table">
                 <thead>
                     <tr>
-                        <th rowspan="2" style="width: 25%;">Réalisations professionnelles</th>
+                        <th rowspan="2" style="width: 30%;">Réalisations professionnelles</th>
                         <th rowspan="2" style="width: 10%;">Période</th>
                         <th colspan="6">Compétences mises en œuvre (Référentiel SISR)</th>
                     </tr>
@@ -129,10 +135,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td colspan="8" class="category-header">Réalisations en cours de formation</td></tr>
+                    <tr><td colspan="8" class="category-header">Formation & Veille</td></tr>
                     <tr>
-                        <td><a href="#" class="real-link">Infrastructure de virtualisation sous VMware / Proxmox</a></td>
-                        <td>2024</td>
+                        <td class="mission-name">Infrastructure de virtualisation (VMware / Proxmox)</td>
+                        <td class="period-cell">2024</td>
                         <td class="check-cell">X</td>
                         <td></td>
                         <td></td>
@@ -141,8 +147,8 @@
                         <td class="check-cell">X</td>
                     </tr>
                     <tr>
-                        <td><a href="realisations-ipc-linux.html" class="real-link">Installation et configuration d’un serveur Linux – Atelier</a></td>
-                        <td>2025</td>
+                        <td class="mission-name">Installation et configuration d’un serveur Linux</td>
+                        <td class="period-cell">2025</td>
                         <td class="check-cell">X</td>
                         <td></td>
                         <td></td>
@@ -150,23 +156,33 @@
                         <td class="check-cell">X</td>
                         <td class="check-cell">X</td>
                     </tr>
-
-                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (1ère année)</td></tr>
                     <tr>
-                        <td><a href="realisations-hyleance.html" class="real-link">Déploiement d’une GPO silencieuse – Hyléance</a></td>
-                        <td>Mai 2025</td>
-                        <td class="check-cell">X</td>
-                        <td class="check-cell">X</td>
+                        <td class="mission-name">Veille Technologique : Évolution des infrastructures IT</td>
+                        <td class="period-cell">2025/2026</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td class="check-cell">X</td>
-                        <td class="check-cell">X</td>
-                        <td></td>
                     </tr>
 
-                    <tr><td colspan="8" class="category-header">Réalisations en milieu professionnel (2ème année)</td></tr>
+                    <tr><td colspan="8" class="category-header">Stage 1ère année : Hyléance</td></tr>
                     <tr>
-                        <td><a href="realisations-tereva-glpi.html" class="real-link">Gestion des incidents et des demandes via GLPI – Tereva</a></td>
-                        <td>Janv 2026</td>
+                        <td class="mission-name">Déploiement d’une GPO silencieuse</td>
+                        <td class="period-cell">Mai 2025</td>
+                        <td class="check-cell">X</td>
+                        <td class="check-cell">X</td>
+                        <td></td>
+                        <td class="check-cell">X</td>
+                        <td class="check-cell">X</td>
+                        <td></td>
+                    </tr>
+
+                    <tr><td colspan="8" class="category-header">Stage 2ème année : Tereva</td></tr>
+                    <tr>
+                        <td class="mission-name">Gestion des incidents et des demandes (GLPI)</td>
+                        <td class="period-cell">Janv 2026</td>
                         <td class="check-cell">X</td>
                         <td class="check-cell">X</td>
                         <td></td>
@@ -175,8 +191,8 @@
                         <td class="check-cell">X</td>
                     </tr>
                     <tr>
-                        <td><a href="#" class="real-link">Déploiement et sécurisation de postes – Tereva</a></td>
-                        <td>Janv 2026</td>
+                        <td class="mission-name">Déploiement et sécurisation de postes utilisateurs</td>
+                        <td class="period-cell">Janv 2026</td>
                         <td class="check-cell">X</td>
                         <td class="check-cell">X</td>
                         <td></td>
@@ -187,6 +203,8 @@
                 </tbody>
             </table>
         </div>
-    </main>
+    </section>
+</main>
+
 </body>
 </html>
