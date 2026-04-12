@@ -6,112 +6,100 @@
     <title>Tableau de Synthèse E5 - Romain Piccoli</title>
     <link rel="stylesheet" href="CSS.css">
     <style>
-    /* Style du conteneur sans effet glassmorphique */
-    .table-container {
-        overflow-x: auto;
-        margin-top: 20px;
-        background: #1a1a1a; /* Fond solide pour plus de lisibilité */
-        border: 1px solid #333;
-        border-radius: 8px;
-    }
+        /* Conteneur sans effet glassmorphique pour une lisibilité maximale */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+            background: #1a1a1a; 
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
 
-    .matrix-table {
-        width: 100%;
-        border-collapse: collapse;
-        color: white;
-        font-size: 0.85em;
-    }
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+            font-size: 0.85em;
+        }
 
-    .matrix-table th, .matrix-table td {
-        border: 1px solid #333;
-        padding: 12px 8px;
-        text-align: center;
-    }
+        .matrix-table th, .matrix-table td {
+            border: 1px solid #333;
+            padding: 12px 8px;
+            text-align: center;
+        }
 
-    /* En-tête du tableau */
-    .matrix-table thead th {
-        background: #252525;
-        color: var(--accent);
-        font-weight: 600;
-        text-transform: uppercase;
-    }
+        .matrix-table thead th {
+            background: #252525;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
 
-    /* Style des liens dans le tableau */
-    .mission-link {
-        color: white;
-        text-decoration: none;
-        display: block;
-        width: 100%;
-        height: 100%;
-        transition: all 0.3s ease;
-    }
+        .mission-link {
+            color: white;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+        }
 
-    .mission-link:hover {
-        color: var(--accent);
-        transform: translateX(5px);
-    }
+        .mission-link:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
 
-    .mission-name {
-        text-align: left !important;
-        padding-left: 15px !important;
-    }
+        .mission-name {
+            text-align: left !important;
+            padding-left: 15px !important;
+        }
 
-    .category-header {
-        background: rgba(243, 156, 18, 0.15) !important;
-        color: var(--accent);
-        font-weight: bold;
-        text-align: left !important;
-        padding: 15px !important;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
+        .category-header {
+            background: rgba(243, 156, 18, 0.15) !important;
+            color: var(--accent);
+            font-weight: bold;
+            text-align: left !important;
+            padding: 12px !important;
+            text-transform: uppercase;
+        }
 
-    .check-cell {
-        color: var(--accent); /* Orange comme demandé */
-        font-weight: 900;
-        font-size: 1.3em;
-    }
+        .check-cell {
+            color: var(--accent);
+            font-weight: 900;
+            font-size: 1.2em;
+        }
 
-    .rotate-text {
-        writing-mode: vertical-rl;
-        transform: rotate(180deg);
-        height: 200px;
-        text-align: left;
-        padding: 10px 5px;
-    }
-</style>
+        .rotate-text {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            height: 180px;
+            text-align: left;
+            padding: 10px 5px;
+            font-size: 0.85em;
+        }
+
+        .candidat-info {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+        }
+
+        .candidat-info p {
+            margin: 5px 0;
+            color: #ddd;
+        }
+
+        .candidat-info span {
+            color: var(--accent);
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 
 <aside class="sidebar">
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="BTS-SIO.html">BTS SIO</a></li>
-            <li><a href="Mon-Profil.html">Mon Profil</a></li>
-            <li><a href="Mes-Stages.html">Mes Stages</a></li>
-            <li><a href="Veille-Technologique.html">Veille Technologique</a></li>
-            <li><a href="tableau-synthese.html" class="active">Tableau de synthèse</a></li>
-        </ul>
-    </nav>
-
-    <div class="sidebar-footer">
-        <div class="status-badge">
-            <div class="status-dot"></div>
-            <span style="font-size: 0.75em; color: #2ecc71; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Disponible</span>
-            <p style="font-size: 0.8em; margin-top: 5px; color: var(--color-text-muted);">Alternance 2026/2027</p>
-        </div>
-
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/romain-piccoli-78abb134a" target="_blank" title="LinkedIn">in</a>
-            <a href="mailto:romainpiccoli0@gmail.com" title="Contact">@</a>
-        </div>
-
-        <p style="font-size: 0.7em; color: rgba(255,255,255,0.3); text-align: center; margin-top: 20px;">
-            © 2026 Romain P.
-        </p>
-    </div>
-</aside>
+    </aside>
 
 <main class="content">
     <header class="content-header">
@@ -119,116 +107,74 @@
         <p>Récapitulatif des réalisations professionnelles - Session 2026</p>
     </header>
 
+    <div class="candidat-info">
+        <p>NOM et prénom : <span>PICCOLI Romain</span></p>
+        <p>N° candidat : <span>080696884DF</span></p>
+        <p>Centre de formation : <span>Lycée Joseph Marie Carriat</span></p>
+        <p>Option : <span>SISR</span></p>
+    </div>
+
     <div class="table-container">
-    <table class="matrix-table">
-        <thead>
-            <tr>
-                <th rowspan="2" style="width: 30%;">Réalisations professionnelles</th>
-                <th rowspan="2" style="width: 10%;">Période</th>
-                <th colspan="6">Compétences mises en œuvre (Référentiel SISR)</th>
-            </tr>
-            <tr>
-                <th class="rotate-text">Gérer le patrimoine informatique</th>
-                <th class="rotate-text">Répondre aux incidents et aux demandes</th>
-                <th class="rotate-text">Développer la présence en ligne</th>
-                <th class="rotate-text">Travailler en mode projet</th>
-                <th class="rotate-text">Mise à disposition d'un service</th>
-                <th class="rotate-text">Organiser son développement professionnel</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td colspan="8" class="category-header">Formation & Veille</td></tr>
-            <tr>
-                <td class="mission-name">
-                    <a href="realisation-virtualisation.html" class="mission-link">Infrastructure de virtualisation (VMware / Proxmox)</a>
-                </td>
-                <td>2026</td>
-                <td class="check-cell">X</td>
-                <td></td>
-                <td></td>
-                <td class="check-cell">X</td>
-                <td class="check-cell">X</td>
-                <td class="check-cell">X</td>
-            </tr>
-            <tr>
-                <td class="mission-name">
-                    <a href="realisations-.html" class="mission-link">Installation et configuration d’un serveur asterisk VOIP/TOIP</a>
-                </td>
-                <td>2026</td>
-                <td class="check-cell">X</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="check-cell">X</td>
-                <td class="check-cell">X</td>
-            </tr>
-            <tr>
-                <td class="mission-name">
-                    <a href="Veille-Technologique.html" class="mission-link">Veille Technologique : l'IA dans les virus et antivirus</a>
-                </td>
-                <td>2026</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td class="check-cell">X</td>
-            </tr>
+        <table class="matrix-table">
+            <thead>
+                <tr>
+                    <th rowspan="2" style="width: 35%;">Réalisations professionnelles</th>
+                    <th rowspan="2" style="width: 10%;">Période</th>
+                    <th colspan="6">Compétences mises en œuvre (SISR)</th>
+                </tr>
+                <tr>
+                    <th class="rotate-text">Gérer le patrimoine</th>
+                    <th class="rotate-text">Répondre aux incidents</th>
+                    <th class="rotate-text">Présence en ligne</th>
+                    <th class="rotate-text">Mode projet</th>
+                    <th class="rotate-text">Mise à disposition service</th>
+                    <th class="rotate-text">Dév. professionnel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td colspan="8" class="category-header">Réalisations en cours de formation</td></tr>
+                <tr>
+                    <td class="mission-name"><a href="realisation-asterisk.html" class="mission-link">Installation Serveur Asterisk VOIP/TOIP (Softphone & Windows client)</a></td>
+                    <td>Mars 2026</td>
+                    <td class="check-cell">X</td><td></td><td></td><td></td><td class="check-cell">X</td><td class="check-cell">X</td>
+                </tr>
+                <tr>
+                    <td class="mission-name"><a href="realisation-portfolio.html" class="mission-link">Création d'un portfolio généré avec IA Gemini & Déploiement GitHub</a></td>
+                    <td>11/25 - 04/26</td>
+                    <td class="check-cell">X</td><td></td><td class="check-cell">X</td><td></td><td></td><td class="check-cell">X</td>
+                </tr>
 
-            <tr><td colspan="8" class="category-header">Stage 1ère année : Tereva</td></tr>
-            <tr>
-                <td class="mission-name">
-                    <a href="realisations-TEREVA.html" class="mission-link">Gestion des incidents et des demandes (GLPI)</a>
-                </td>
-                <td>Juin 2025</td>
-                <td class="check-cell">X</td>
-                <td class="check-cell">X</td>
-                <td></td>
-                <td class="check-cell">X</td>
-                <td class="check-cell">X</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="mission-name">
-                    <a href="realisations-TEREVA.html" class="mission-link">Déploiement de postes utilisateurs</a>
-                </td>
-                <td>Juin 2025</td>
-                <td class="check-cell">X</td>
-                <td class="check-cell">X</td>
-                <td></td>
-                <td></td>
-                <td class="check-cell">X</td>
-                <td></td>
-            </tr>
+                <tr><td colspan="8" class="category-header">Stage 1ère année : Tereva</td></tr>
+                <tr>
+                    <td class="mission-name"><a href="tereva-glpi.html" class="mission-link">Gestion des demandes GLPI & Support utilisateur</a></td>
+                    <td>Juin 2025</td>
+                    <td class="check-cell">X</td><td class="check-cell">X</td><td></td><td class="check-cell">X</td><td class="check-cell">X</td><td></td>
+                </tr>
+                <tr>
+                    <td class="mission-name"><a href="tereva-deploiement.html" class="mission-link">Déploiement de postes & Installation applications</a></td>
+                    <td>Mai 2025</td>
+                    <td class="check-cell">X</td><td class="check-cell">X</td><td></td><td></td><td class="check-cell">X</td><td></td>
+                </tr>
+                <tr>
+                    <td class="mission-name"><a href="tereva-infra.html" class="mission-link">Modification comptes utilisateurs (logiciel INFRA)</a></td>
+                    <td>Juillet 2025</td>
+                    <td class="check-cell">X</td><td class="check-cell">X</td><td></td><td></td><td></td><td></td>
+                </tr>
 
-            <tr><td colspan="8" class="category-header">Stage 2ème année : Hyléance</td></tr>
-            <tr>
-                <td class="mission-name">
-                    <a href="realisations-hyleance.html" class="mission-link">Déploiement d’une GPO</a>
-                </td>
-                <td>Janv-fev 2026</td>
-                <td class="check-cell">X</td>
-                <td class="check-cell">X</td>
-                <td></td>
-                <td></td>
-                <td class="check-cell">X</td>
-                <td class="check-cell">X</td>
-            </tr>
-            <tr>
-                <td class="mission-name">
-                    <a href="realisation-hyleance.html" class="mission-link">Aide aux utilisateurs (support)</a>
-                </td>
-                <td>Janv-fev 2026</td>
-                <td class="check-cell">X</td>
-                <td class="check-cell">X</td>
-                <td></td>
-                <td></td>
-                <td class="check-cell">X</td>
-                <td></td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                <tr><td colspan="8" class="category-header">Stage 2ème année : Hyléance</td></tr>
+                <tr>
+                    <td class="mission-name"><a href="hyleance-gpo.html" class="mission-link">Déploiement GPO Clickshare (réunions)</a></td>
+                    <td>Fév 2026</td>
+                    <td class="check-cell">X</td><td></td><td class="check-cell">X</td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td class="mission-name"><a href="hyleance-onboarding.html" class="mission-link">Site d'onboarding & Formation ludique (Phishing/Malware)</a></td>
+                    <td>2026</td>
+                    <td></td><td></td><td class="check-cell">X</td><td class="check-cell">X</td><td></td><td class="check-cell">X</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </main>
 
 </body>
