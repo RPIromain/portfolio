@@ -6,7 +6,7 @@
     <title>Tableau de Synthèse E5 - Romain Piccoli</title>
     <link rel="stylesheet" href="CSS.css">
     <style>
-        /* Conteneur sans effet glassmorphique pour une lisibilité maximale */
+        /* Styles spécifiques pour le tableau (Sans Glassmorphism pour la lisibilité) */
         .table-container {
             overflow-x: auto;
             margin-top: 20px;
@@ -44,7 +44,7 @@
 
         .mission-link:hover {
             color: var(--accent);
-            padding-left: 5px;
+            transform: translateX(5px);
         }
 
         .mission-name {
@@ -62,7 +62,7 @@
         }
 
         .check-cell {
-            color: var(--accent);
+            color: var(--accent); /* Orange */
             font-weight: 900;
             font-size: 1.2em;
         }
@@ -70,36 +70,53 @@
         .rotate-text {
             writing-mode: vertical-rl;
             transform: rotate(180deg);
-            height: 180px;
+            height: 190px;
             text-align: left;
             padding: 10px 5px;
             font-size: 0.85em;
         }
 
+        /* Infos candidat */
         .candidat-info {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid #333;
-            padding: 15px;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 0.9em;
+            margin-bottom: 25px;
         }
 
-        .candidat-info p {
-            margin: 5px 0;
-            color: #ddd;
-        }
-
-        .candidat-info span {
-            color: var(--accent);
-            font-weight: bold;
-        }
+        .candidat-info p { margin: 8px 0; color: #bbb; }
+        .candidat-info span { color: var(--accent); font-weight: bold; }
     </style>
 </head>
 <body>
 
 <aside class="sidebar">
-    </aside>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="BTS-SIO.html">BTS SIO</a></li>
+            <li><a href="Mon-Profil.html">Mon Profil</a></li>
+            <li><a href="Mes-Stages.html">Mes Stages</a></li>
+            <li><a href="Veille-Technologique.html">Veille Technologique</a></li>
+            <li><a href="tableau-synthese.html" class="active">Tableau de synthèse</a></li>
+        </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+        <div class="status-badge">
+            <div class="status-dot"></div>
+            <span style="font-size: 0.75em; color: #2ecc71; font-weight: 600; text-transform: uppercase;">Disponible</span>
+            <p style="font-size: 0.8em; margin-top: 5px; color: var(--color-text-muted);">Alternance 2026/2027</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/romain-piccoli-78abb134a" target="_blank">in</a>
+            <a href="mailto:romainpiccoli0@gmail.com">@</a>
+        </div>
+        <p style="font-size: 0.7em; color: rgba(255,255,255,0.3); text-align: center; margin-top: 20px;">© 2026 Romain P.</p>
+    </div>
+</aside>
 
 <main class="content">
     <header class="content-header">
@@ -123,52 +140,52 @@
                     <th colspan="6">Compétences mises en œuvre (SISR)</th>
                 </tr>
                 <tr>
-                    <th class="rotate-text">Gérer le patrimoine</th>
-                    <th class="rotate-text">Répondre aux incidents</th>
-                    <th class="rotate-text">Présence en ligne</th>
-                    <th class="rotate-text">Mode projet</th>
-                    <th class="rotate-text">Mise à disposition service</th>
-                    <th class="rotate-text">Dév. professionnel</th>
+                    <th class="rotate-text">Gérer le patrimoine informatique</th>
+                    <th class="rotate-text">Répondre aux incidents / demandes</th>
+                    <th class="rotate-text">Développer la présence en ligne</th>
+                    <th class="rotate-text">Travailler en mode projet</th>
+                    <th class="rotate-text">Mise à disposition d'un service</th>
+                    <th class="rotate-text">Développement professionnel</th>
                 </tr>
             </thead>
             <tbody>
                 <tr><td colspan="8" class="category-header">Réalisations en cours de formation</td></tr>
                 <tr>
-                    <td class="mission-name"><a href="realisation-asterisk.html" class="mission-link">Installation Serveur Asterisk VOIP/TOIP (Softphone & Windows client)</a></td>
-                    <td>Mars 2026</td>
+                    <td class="mission-name"><a href="asterisk.html" class="mission-link">Installation Serveur Asterisk VOIP/TOIP (Softphone & Windows client)</a></td>
+                    <td>11/03/2026</td>
                     <td class="check-cell">X</td><td></td><td></td><td></td><td class="check-cell">X</td><td class="check-cell">X</td>
                 </tr>
                 <tr>
-                    <td class="mission-name"><a href="realisation-portfolio.html" class="mission-link">Création d'un portfolio généré avec IA Gemini & Déploiement GitHub</a></td>
+                    <td class="mission-name"><a href="portfolio.html" class="mission-link">Création d'un portfolio avec IA Gemini & Déploiement GitHub / Backup</a></td>
                     <td>11/25 - 04/26</td>
                     <td class="check-cell">X</td><td></td><td class="check-cell">X</td><td></td><td></td><td class="check-cell">X</td>
                 </tr>
 
                 <tr><td colspan="8" class="category-header">Stage 1ère année : Tereva</td></tr>
                 <tr>
-                    <td class="mission-name"><a href="tereva-glpi.html" class="mission-link">Gestion des demandes GLPI & Support utilisateur</a></td>
-                    <td>Juin 2025</td>
+                    <td class="mission-name"><a href="tereva-glpi.html" class="mission-link">Gestion des demandes GLPI & Support (appels utilisateurs)</a></td>
+                    <td>01/06/2025</td>
                     <td class="check-cell">X</td><td class="check-cell">X</td><td></td><td class="check-cell">X</td><td class="check-cell">X</td><td></td>
                 </tr>
                 <tr>
-                    <td class="mission-name"><a href="tereva-deploiement.html" class="mission-link">Déploiement de postes & Installation applications</a></td>
-                    <td>Mai 2025</td>
+                    <td class="mission-name"><a href="tereva-deploiement.html" class="mission-link">Déploiement de postes & Installation d'applications obligatoires</a></td>
+                    <td>01/05/2025</td>
                     <td class="check-cell">X</td><td class="check-cell">X</td><td></td><td></td><td class="check-cell">X</td><td></td>
                 </tr>
                 <tr>
-                    <td class="mission-name"><a href="tereva-infra.html" class="mission-link">Modification comptes utilisateurs (logiciel INFRA)</a></td>
-                    <td>Juillet 2025</td>
+                    <td class="mission-name"><a href="tereva-infra.html" class="mission-link">Modification des comptes utilisateurs sur logiciel interne INFRA</a></td>
+                    <td>01/07/2025</td>
                     <td class="check-cell">X</td><td class="check-cell">X</td><td></td><td></td><td></td><td></td>
                 </tr>
 
                 <tr><td colspan="8" class="category-header">Stage 2ème année : Hyléance</td></tr>
                 <tr>
-                    <td class="mission-name"><a href="hyleance-gpo.html" class="mission-link">Déploiement GPO Clickshare (réunions)</a></td>
-                    <td>Fév 2026</td>
+                    <td class="mission-name"><a href="hyleance-gpo.html" class="mission-link">Déploiement GPO Clickshare pour écrans de réunions</a></td>
+                    <td>Févr. 2026</td>
                     <td class="check-cell">X</td><td></td><td class="check-cell">X</td><td></td><td></td><td></td>
                 </tr>
                 <tr>
-                    <td class="mission-name"><a href="hyleance-onboarding.html" class="mission-link">Site d'onboarding & Formation ludique (Phishing/Malware)</a></td>
+                    <td class="mission-name"><a href="hyleance-onboarding.html" class="mission-link">Site d'onboarding & Formation ludique (Phishing / Malware)</a></td>
                     <td>2026</td>
                     <td></td><td></td><td class="check-cell">X</td><td class="check-cell">X</td><td></td><td class="check-cell">X</td>
                 </tr>
