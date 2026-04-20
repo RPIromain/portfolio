@@ -8,21 +8,19 @@
 </head>
 <body>
 
-    <aside class="sidebar">
+<aside class="sidebar">
     <nav>
         <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="BTS-SIO.html">BTS SIO</a></li>
             <li><a href="Mon-Profil.html">Mon Profil</a></li>
             <li><a href="Mes-Stages.html">Mes Stages</a></li>
-            <li><a href="Veille-Technologique.html">Veille Technologique</a></li>
+            <li><a href="Veille-Technologique.html" class="active">Veille Technologique</a></li>
             <li><a href="tableau-synthese.html">Tableau de synthèse</a></li>
-
         </ul>
     </nav>
 
     <div class="sidebar-footer">
-        
         <div class="status-badge">
             <div class="status-dot"></div>
             <span style="font-size: 0.75em; color: #2ecc71; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Disponible</span>
@@ -40,90 +38,94 @@
     </div>
 </aside>
 
+<main class="content">
 
-    <main class="content">
+    <header class="content-header">
+        <h1>Veille Technologique</h1>
+        <p>Sujet : L’évolution de la lutte contre les malwares grâce à l’IA (EDR & SASE)</p>
+    </header>
 
-<header class="content-header">
-    <h1>Veille Technologique</h1>
-    <p>Sujet : L’utilisation de l’intelligence artificielle dans les antivirus et la cybersécurité</p>
-</header>
+    <section class="bubble-card">
+        <h2>Présentation du sujet</h2>
+        <p>
+            J’ai choisi d'étudier comment l'intelligence artificielle révolutionne la détection des menaces. 
+            Lors de mon stage chez Hyléance, j’ai utilisé l’EDR <strong>WithSecure</strong>, ce qui m'a permis de voir concrètement l'analyse comportementale en action. 
+            Ma veille porte sur la transition des antivirus classiques (signatures) vers les protections intelligentes capables de contrer des attaques 0-day et des virus polymorphes.
+        </p>
+    </section>
 
-<section class="bubble-card">
-    <h2>Présentation du sujet</h2>
-    <p>
-        J’ai choisi ce sujet car l’intelligence artificielle est aujourd’hui largement utilisée dans les solutions de cybersécurité.
-        Lors de mon stage chez Hyléance, j’ai pu observer l’utilisation d’un EDR (WithSecure) intégrant de l’IA pour détecter les comportements malveillants.
-        J’ai donc souhaité approfondir ce domaine afin de mieux comprendre l’évolution des antivirus et des systèmes de protection.
-    </p>
-</section>
+    <section class="bubble-card">
+        <h2>Méthodologie de veille</h2>
+        <p>
+            Pour rester à jour, j'ai mis en place un système de surveillance automatisé :
+        </p>
+        <ul class="card-details">
+            <li><strong>Flux RSS :</strong> Suivi quotidien via Feedly (Le Monde Informatique, ZDNet).</li>
+            <li><strong>Alertes Google :</strong> Mots-clés ciblés (IA Cybersécurité, EDR, SASE, AMSI).</li>
+            <li><strong>Sources Officielles :</strong> Consultation des bulletins du CERT-FR (ANSSI) et de Microsoft Learn.</li>
+        </ul>
+    </section>
 
-<section class="bubble-card">
-    <h2>Ma méthodologie de veille</h2>
-    <p>
-        Pour réaliser ma veille technologique, j’utilise un lecteur de flux RSS sur mon smartphone afin de suivre régulièrement l’actualité informatique et cybersécurité.
-        En complément, je consulte Google Actualités en étant abonné à des rubriques liées à l’informatique, à l’intelligence artificielle et à la cybersécurité.
-    </p>
-    <ul class="card-details">
-        <li>Consultation régulière des actualités</li>
-        <li>Sélection des articles pertinents</li>
-        <li>Analyse et compréhension des nouvelles technologies</li>
-    </ul>
-</section>
+    <section class="bubble-card">
+        <h2>Concepts clés étudiés</h2>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div>
+                <h4 style="color: var(--accent);">Défense du Poste (EDR)</h4>
+                <p style="font-size: 0.9em;">Utilisation de l'IA pour l'analyse comportementale et le blocage des scripts PowerShell suspects via l'interface <strong>AMSI</strong>.</p>
+            </div>
+            <div>
+                <h4 style="color: var(--accent);">Défense Réseau (SASE)</h4>
+                <p style="font-size: 0.9em;">Mise en place d'une "douane numérique" (SASE) qui analyse les flux de données par IA avant qu'ils n'atteignent le terminal.</p>
+            </div>
+        </div>
+    </section>
 
-<section class="bubble-card">
-    <h2>Antivirus nouvelle génération (EDR / IA)</h2>
-    <p>
-        Les antivirus modernes utilisent l’intelligence artificielle pour analyser le comportement des programmes.
-        Contrairement aux antivirus classiques basés sur des signatures, les EDR permettent de détecter des menaces inconnues (zero-day).
-    </p>
-    <ul class="card-details">
-        <li>Analyse comportementale</li>
-        <li>Détection en temps réel</li>
-        <li>Protection contre les ransomwares</li>
-    </ul>
-</section>
+    <h2 style="margin: 30px 0 15px 0; color: #ffffff;">Sources & Documentation</h2>
 
-<section class="bubble-card">
-    <h2>L’IA utilisée dans les cyberattaques</h2>
-    <p>
-        L’intelligence artificielle est également utilisée par les cybercriminels pour automatiser les attaques,
-        notamment le phishing et la création de malwares plus sophistiqués.
-    </p>
-    <ul class="card-details">
-        <li>Phishing automatisé</li>
-        <li>Malwares intelligents</li>
-        <li>Attaques plus difficiles à détecter</li>
-    </ul>
-</section>
+    <div class="summary-cards" style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <article class="summary-card" style="flex: 1; min-width: 250px;">
+            <p style="font-size: 0.7em; color: var(--accent);">ANSSI - Institutionnel</p>
+            <h3>Synthèse de la menace IA</h3>
+            <p style="font-size: 0.85em; margin-bottom: 15px;">Analyse des risques de l'IA générative : création de malwares polymorphes et phishing automatisé.</p>
+            <a href="https://cyber.gouv.fr/actualites/synthese-de-la-menace-sur-lia-generative-face-aux-attaques-informatiques/" target="_blank">Lire la synthèse</a>
+        </article>
 
-<h2 style="margin: 30px 0 15px 0; color: #ffffff;">Sources & Articles</h2>
+        <article class="summary-card" style="flex: 1; min-width: 250px;">
+            <p style="font-size: 0.7em; color: var(--accent);">Microsoft - Technique</p>
+            <h3>Architecture AMSI</h3>
+            <p style="font-size: 0.85em; margin-bottom: 15px;">
+                Analyse de l'interface qui permet à l'IA de Defender de surveiller les scripts PowerShell. 
+                Cela permet de bloquer les menaces qui tentent de détourner les outils d'administration du système.
+            </p>
+            <a href="https://learn.microsoft.com/en-us/windows/win32/amsi/antimalware-scan-interface-portal" target="_blank">Doc Technique</a>
+        </article>
 
-<div class="summary-cards" style="display: flex; gap: 20px; flex-wrap: wrap;">
-    <article class="summary-card">
-        <h3>ANSSI</h3>
-        <a href="https://cyber.gouv.fr/actualites/synthese-de-la-menace-sur-lia-generative-face-aux-attaques-informatiques/" target="_blank">Consulter le site</a>
-    </article>
-    <article class="summary-card">
-        <h3>Microsoft learn</h3>
-        <a href="https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-antivirus-using-powershell">Voir les solutions</a>
-    </article>
-    <article class="summary-card">
-        <h3>Microsoft learn</h3>
-        <a href="https://learn.microsoft.com/en-us/answers/questions/5816907/security-intelligence-update-for-microsoft-defende" target="_blank">Lire les articles</a>
-    </article>
-</div>
+        <article class="summary-card" style="flex: 1; min-width: 250px;">
+            <p style="font-size: 0.7em; color: var(--accent);">Microsoft - Administration</p>
+            <h3>Sécurité via PowerShell</h3>
+            <p style="font-size: 0.85em; margin-bottom: 15px;">Gestion industrielle des Security Intelligence Updates et automatisation de la défense.</p>
+            <a href="https://learn.microsoft.com/en-us/defender-endpoint/microsoft-defender-antivirus-using-powershell" target="_blank">Guide Admin</a>
+        </article>
 
-<section class="bubble-card" style="margin-top: 30px; border-left: 4px solid var(--accent);">
-    <h2>Analyse personnelle & lien avec le BTS SIO SISR</h2>
-    <p>
-        Cette veille m’a permis de comprendre que les solutions de cybersécurité évoluent fortement grâce à l’intelligence artificielle.
-        Les EDR permettent aujourd’hui de détecter des menaces inconnues en analysant les comportements des systèmes.
-    </p>
+        <article class="summary-card" style="flex: 1; min-width: 250px;">
+            <p style="font-size: 0.7em; color: var(--accent);">LMI - Innovation</p>
+            <h3>Défense SASE & IA</h3>
+            <p style="font-size: 0.85em; margin-bottom: 15px;">La convergence entre sécurité réseau et IA pour une défense adaptative globale.</p>
+            <a href="https://www.lemondeinformatique.fr/actualites/lire-cato-networks-integre-une-defense-adaptative-a-sa-plateforme-sase-99546.html" target="_blank">Voir l'innovation</a>
+        </article>
+    </div>
+
+    <section class="bubble-card" style="margin-top: 30px; border-left: 4px solid var(--accent);">
+        <h2>Bilan & Lien avec le BTS SIO SISR</h2>
+        <p>
+            Cette veille est directement liée à l'option <strong>SISR</strong>. J'ai compris que la gestion d'un parc informatique ne se limite plus à l'installation d'un logiciel, mais à l'administration d'écosystèmes apprenants. 
+            La maîtrise de <strong>PowerShell</strong> est cruciale pour piloter ces outils, tandis que la compréhension du <strong>SASE</strong> me permet de mieux appréhender la sécurisation des réseaux hybrides (télétravail / cloud).
+        </p>
+    </section>
 
 </main>
 </body>
 </html>
-
 
 
 
