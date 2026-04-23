@@ -6,7 +6,7 @@
     <title>Tableau de Synthèse E5 - Romain Piccoli</title>
     <link rel="stylesheet" href="CSS.css">
     <style>
-        /* Styles spécifiques pour le tableau (Sans Glassmorphism pour la lisibilité) */
+        /* Styles spécifiques pour le tableau */
         .table-container {
             overflow-x: auto;
             margin-top: 20px;
@@ -87,6 +87,16 @@
 
         .candidat-info p { margin: 8px 0; color: #bbb; }
         .candidat-info span { color: var(--accent); font-weight: bold; }
+
+        /* Style pour le bouton de téléchargement */
+        .download-section {
+            margin: 30px 0;
+            text-align: center;
+            padding: 20px;
+            background: rgba(243, 156, 18, 0.05);
+            border: 1px dashed var(--accent);
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
@@ -131,6 +141,13 @@
         <p>Option : <span>SISR</span></p>
     </div>
 
+    <section class="download-section">
+        <p style="color: #fff; margin-bottom: 15px;">Document officiel pour l'épreuve E5 :</p>
+        <a href="tableau_synthese_romain_v3.xlsx" class="read-more" style="display: inline-block; text-decoration: none;" download>
+            📥 Télécharger le Tableau de Synthèse (XLSX)
+        </a>
+    </section>
+
     <div class="table-container">
         <table class="matrix-table">
             <thead>
@@ -159,6 +176,11 @@
                     <td class="mission-name">Création d'un portfolio avec IA Gemini & Déploiement GitHub / Backup</td>
                     <td>11/25 - 04/26</td>
                     <td class="check-cell">X</td><td></td><td class="check-cell">X</td><td></td><td></td><td class="check-cell">X</td>
+                </tr>
+                <tr>
+                    <td class="mission-name"><a href="Veille-Technologique.html" class="mission-link">Veille Technologique : IA, EDR, SASE et Interface AMSI</a></td>
+                    <td>2025 - 2026</td>
+                    <td class="check-cell">X</td><td></td><td></td><td></td><td></td><td class="check-cell">X</td>
                 </tr>
 
                 <tr><td colspan="8" class="category-header">Stage 1ère année : Tereva</td></tr>
